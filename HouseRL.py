@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from gymnasium import spaces
-from stable_baselines3 import PPO
+from stable_baselines3 import PPO, A2C
 from stable_baselines3.common.vec_env import DummyVecEnv, VecNormalize
 
 # ============================================================
@@ -38,8 +38,9 @@ EPSILON = 1.0
 EPSILON_DECAY = 0.995
 EPSILON_MIN = 0.05
 
-# PPO
+# PPO / A2C
 PPO_TIMESTEPS = 50_000
+A2C_TIMESTEPS = 150_000
 
 ACTIONS = {
     0: "BUY",
@@ -112,7 +113,6 @@ def bucket_return(x: float) -> str:
     if x < 0.02:
         return "UP_SMALL"
     return "UP_BIG"
-
 
 def bucket_momentum(x: float) -> str:
     if x < -0.02:
@@ -229,7 +229,6 @@ class QLearningAgent:
         td_error = td_target - self.q_table[state][action]
         self.q_table[state][action] += ALPHA * td_error
 
-
 def train_q_learning(df: pd.DataFrame, selected_area: str, selected_type: str):
     env = HousingEnv(df, selected_area, selected_type)
     agent = QLearningAgent()
@@ -254,7 +253,6 @@ def train_q_learning(df: pd.DataFrame, selected_area: str, selected_type: str):
 
     return agent, rewards_per_episode
 
-
 def evaluate_q_learning(agent: QLearningAgent, df: pd.DataFrame, selected_area: str, selected_type: str):
     env = HousingEnv(df, selected_area, selected_type)
     state = env.reset()
@@ -278,7 +276,7 @@ def evaluate_q_learning(agent: QLearningAgent, df: pd.DataFrame, selected_area: 
     })
 
 # ============================================================
-# GYM ENV FOR PPO
+# GYM ENV FOR PPO / A2C
 # ============================================================
 
 class HousingGymEnv(gym.Env):
@@ -367,7 +365,7 @@ class HousingGymEnv(gym.Env):
                 self.holding = 1
                 self.buy_price = current_price
             else:
-                invalid_penalty = -1.0
+                invalid_penalty = -0.2
 
         elif action == 1:  # SELL
             if self._can_sell():
@@ -375,7 +373,7 @@ class HousingGymEnv(gym.Env):
                 self.holding = 0
                 self.buy_price = 0.0
             else:
-                invalid_penalty = -1.0
+                invalid_penalty = -0.2
 
         elif action == 2:  # HOLD
             pass
@@ -390,27 +388,26 @@ class HousingGymEnv(gym.Env):
         next_price = self._current_price()
         new_value = self._portfolio_value(next_price)
 
-        # PPO learns better from scaled returns than raw dollars
         reward = 100.0 * ((new_value - old_value) / max(old_value, 1.0))
         reward += invalid_penalty
 
         if terminated:
-            return np.zeros(self.observation_space.shape, dtype=np.float32), float(reward), terminated, truncated, {}
+            zero_obs = np.zeros(self.observation_space.shape, dtype=np.float32)
+            return zero_obs, float(reward), terminated, truncated, {}
 
         return self._get_obs(), float(reward), terminated, truncated, {}
 
 # ============================================================
-# PPO TRAIN / EVAL
+# PPO / A2C TRAINING HELPERS
 # ============================================================
 
-def make_ppo_env(df: pd.DataFrame, selected_area: str, selected_type: str):
+def make_rl_env(df: pd.DataFrame, selected_area: str, selected_type: str):
     def _init():
         return HousingGymEnv(df, selected_area, selected_type)
     return _init
 
-
 def train_ppo(df: pd.DataFrame, selected_area: str, selected_type: str):
-    vec_env = DummyVecEnv([make_ppo_env(df, selected_area, selected_type)])
+    vec_env = DummyVecEnv([make_rl_env(df, selected_area, selected_type)])
     vec_env = VecNormalize(vec_env, norm_obs=True, norm_reward=True, clip_obs=10.0)
 
     model = PPO(
@@ -431,10 +428,33 @@ def train_ppo(df: pd.DataFrame, selected_area: str, selected_type: str):
     model.learn(total_timesteps=PPO_TIMESTEPS)
     return model, vec_env
 
+def train_a2c(df: pd.DataFrame, selected_area: str, selected_type: str):
+    vec_env = DummyVecEnv([make_rl_env(df, selected_area, selected_type)])
+    vec_env = VecNormalize(vec_env, norm_obs=True, norm_reward=True, clip_obs=10.0)
 
-def evaluate_ppo(model: PPO, vec_norm: VecNormalize, df: pd.DataFrame, selected_area: str, selected_type: str):
+    model = A2C(
+        "MlpPolicy",
+        vec_env,
+        learning_rate=3e-4,
+        n_steps=8,
+        gamma=0.95,
+        gae_lambda=0.95,
+        ent_coef=0.05,
+        vf_coef=0.25,
+        verbose=0,
+        seed=42,
+        device="cpu",
+    )
+
+    model.learn(total_timesteps=A2C_TIMESTEPS)
+    return model, vec_env
+
+def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selected_area: str, selected_type: str, label: str):
     raw_env = HousingGymEnv(df, selected_area, selected_type)
     obs, _ = raw_env.reset()
+
+    vec_norm.training = False
+    vec_norm.norm_reward = False
 
     dates = [raw_env.df.iloc[raw_env.idx][DATE_COL]]
     values = [raw_env._portfolio_value(raw_env._current_price())]
@@ -453,7 +473,7 @@ def evaluate_ppo(model: PPO, vec_norm: VecNormalize, df: pd.DataFrame, selected_
     return pd.DataFrame({
         "Date": dates,
         "PortfolioValue": values,
-        "Model": "PPO",
+        "Model": label,
     })
 
 # ============================================================
@@ -495,10 +515,18 @@ def evaluate_buy_and_hold(df: pd.DataFrame, selected_area: str, selected_type: s
 # PLOT
 # ============================================================
 
-def plot_final_comparison(q_df: pd.DataFrame, ppo_df: pd.DataFrame, bh_df: pd.DataFrame, area: str, property_type: str):
+def plot_final_comparison(
+    q_df: pd.DataFrame,
+    ppo_df: pd.DataFrame,
+    a2c_df: pd.DataFrame,
+    bh_df: pd.DataFrame,
+    area: str,
+    property_type: str
+):
     plt.figure(figsize=(11, 6))
     plt.plot(q_df["Date"], q_df["PortfolioValue"], label="Q-Learning")
     plt.plot(ppo_df["Date"], ppo_df["PortfolioValue"], label="PPO")
+    plt.plot(a2c_df["Date"], a2c_df["PortfolioValue"], label="A2C")
     plt.plot(bh_df["Date"], bh_df["PortfolioValue"], label="Buy-and-Hold")
 
     plt.title(f"Portfolio Value Comparison: {property_type} in {area}")
@@ -525,14 +553,19 @@ if __name__ == "__main__":
     print(f"Training PPO for {property_type} in {area}...")
     ppo_model, ppo_vec_norm = train_ppo(df, area, property_type)
 
+    print(f"Training A2C for {property_type} in {area}...")
+    a2c_model, a2c_vec_norm = train_a2c(df, area, property_type)
+
     print("Evaluating models...")
     q_eval = evaluate_q_learning(q_agent, df, area, property_type)
-    ppo_eval = evaluate_ppo(ppo_model, ppo_vec_norm, df, area, property_type)
+    ppo_eval = evaluate_policy_model(ppo_model, ppo_vec_norm, df, area, property_type, "PPO")
+    a2c_eval = evaluate_policy_model(a2c_model, a2c_vec_norm, df, area, property_type, "A2C")
     bh_eval = evaluate_buy_and_hold(df, area, property_type)
 
     print("\nFinal portfolio values:")
     print(f"Q-Learning:   ${q_eval['PortfolioValue'].iloc[-1]:,.2f}")
     print(f"PPO:          ${ppo_eval['PortfolioValue'].iloc[-1]:,.2f}")
+    print(f"A2C:          ${a2c_eval['PortfolioValue'].iloc[-1]:,.2f}")
     print(f"Buy-and-Hold: ${bh_eval['PortfolioValue'].iloc[-1]:,.2f}")
 
-    plot_final_comparison(q_eval, ppo_eval, bh_eval, area, property_type)
+    plot_final_comparison(q_eval, ppo_eval, a2c_eval, bh_eval, area, property_type)
