@@ -168,6 +168,7 @@ class HousingEnv:
 
         current_price = self._current_price()
         old_value = self._portfolio_value(current_price)
+        invalid_penalty = 0.0
 
         if action == 0:  # BUY
             if self.holding == 0 and self.cash >= current_price + TRANSACTION_COST:
@@ -175,11 +176,7 @@ class HousingEnv:
                 self.holding = 1
                 self.buy_price = current_price
             else:
-                reward = -2000.0
-                self.idx += 1
-                if self.idx >= len(self.df) - 1:
-                    self.done = True
-                return self._get_state(), reward, self.done
+                invalid_penalty = -0.2  # ← was -2000.0
 
         elif action == 1:  # SELL
             if self.holding == 1:
@@ -187,11 +184,7 @@ class HousingEnv:
                 self.holding = 0
                 self.buy_price = 0.0
             else:
-                reward = -2000.0
-                self.idx += 1
-                if self.idx >= len(self.df) - 1:
-                    self.done = True
-                return self._get_state(), reward, self.done
+                invalid_penalty = -0.2  # ← was -2000.0
 
         elif action == 2:  # HOLD
             pass
@@ -206,10 +199,9 @@ class HousingEnv:
         next_price = self._current_price()
         new_value = self._portfolio_value(next_price)
 
-        reward = float(new_value - old_value)
+        reward = 100.0 * ((new_value - old_value) / max(old_value, 1.0)) + invalid_penalty
         next_state = self._get_state()
         return next_state, reward, self.done
-
 # ============================================================
 # Q-LEARNING AGENT
 # ============================================================
@@ -259,19 +251,36 @@ def evaluate_q_learning(agent: QLearningAgent, df: pd.DataFrame, selected_area: 
 
     dates = [env.df.iloc[env.idx][DATE_COL]]
     values = [env._portfolio_value(env._current_price())]
+    actions = ["START"]
+
+    action_counts = {a: 0 for a in ACTIONS.values()}
 
     done = False
     while not done:
         action = int(np.argmax(agent.q_table[state]))
+        action_name = ACTIONS[action]
+
+        action_counts[action_name] += 1
+
         next_state, reward, done = env.step(action)
         state = next_state
 
         dates.append(env.df.iloc[env.idx][DATE_COL])
         values.append(env._portfolio_value(env._current_price()))
+        actions.append(action_name)
+
+    # Convert to %
+    total = sum(action_counts.values())
+    action_percent = {k: (v / total) * 100 for k, v in action_counts.items()}
+
+    print("\nQ-Learning Action Distribution:")
+    print(action_counts)
+    print({k: f"{v:.2f}%" for k, v in action_percent.items()})
 
     return pd.DataFrame({
         "Date": dates,
         "PortfolioValue": values,
+        "Action": actions,
         "Model": "Q-Learning",
     })
 
@@ -423,6 +432,7 @@ def train_ppo(df: pd.DataFrame, selected_area: str, selected_type: str):
         n_epochs=10,
         verbose=0,
         seed=42,
+        device="cpu"
     )
 
     model.learn(total_timesteps=PPO_TIMESTEPS)
@@ -443,7 +453,6 @@ def train_a2c(df: pd.DataFrame, selected_area: str, selected_type: str):
         vf_coef=0.25,
         verbose=0,
         seed=42,
-        device="cpu",
     )
 
     model.learn(total_timesteps=A2C_TIMESTEPS)
@@ -458,21 +467,39 @@ def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selec
 
     dates = [raw_env.df.iloc[raw_env.idx][DATE_COL]]
     values = [raw_env._portfolio_value(raw_env._current_price())]
+    actions = ["START"]
+
+    action_counts = {a: 0 for a in ACTIONS.values()}
 
     done = False
     while not done:
         norm_obs = vec_norm.normalize_obs(obs.reshape(1, -1))
         action, _ = model.predict(norm_obs, deterministic=True)
 
-        obs, reward, terminated, truncated, _ = raw_env.step(int(action[0]))
+        action_int = int(action[0])
+        action_name = ACTIONS[action_int]
+
+        action_counts[action_name] += 1
+
+        obs, reward, terminated, truncated, _ = raw_env.step(action_int)
         done = terminated or truncated
 
         dates.append(raw_env.df.iloc[raw_env.idx][DATE_COL])
         values.append(raw_env._portfolio_value(raw_env._current_price()))
+        actions.append(action_name)
+
+    # Convert to %
+    total = sum(action_counts.values())
+    action_percent = {k: (v / total) * 100 for k, v in action_counts.items()}
+
+    print(f"\n{label} Action Distribution:")
+    print(action_counts)
+    print({k: f"{v:.2f}%" for k, v in action_percent.items()})
 
     return pd.DataFrame({
         "Date": dates,
         "PortfolioValue": values,
+        "Action": actions,
         "Model": label,
     })
 
@@ -541,31 +568,91 @@ def plot_final_comparison(
 # MAIN
 # ============================================================
 
+def plot_with_actions(df: pd.DataFrame, title: str, filename: str):
+    plt.figure(figsize=(11, 6))
+
+    # Line plot
+    plt.plot(df["Date"], df["PortfolioValue"], label=title)
+
+    # Filter actions
+    buy_points = df[df["Action"] == "BUY"]
+    sell_points = df[df["Action"] == "SELL"]
+
+    # Scatter markers
+    plt.scatter(buy_points["Date"], buy_points["PortfolioValue"], marker="^", label="BUY")
+    plt.scatter(sell_points["Date"], sell_points["PortfolioValue"], marker="v", label="SELL")
+
+    plt.title(title)
+    plt.xlabel("Date")
+    plt.ylabel("Portfolio Value")
+    plt.legend()
+    plt.tight_layout()
+
+    plt.savefig(filename, dpi=200)
+    plt.show()
+
+def plot_action_distribution(df: pd.DataFrame, title: str, filename: str):
+    action_counts = df["Action"].value_counts()
+
+    # Remove START if present
+    if "START" in action_counts:
+        action_counts = action_counts.drop("START")
+
+    total = action_counts.sum()
+    percentages = (action_counts / total) * 100
+
+    plt.figure(figsize=(6, 4))
+    plt.bar(percentages.index, percentages.values)
+
+    plt.title(f"{title} Action Distribution")
+    plt.xlabel("Action")
+    plt.ylabel("Percentage (%)")
+
+    plt.tight_layout()
+    plt.savefig(filename, dpi=200)
+    plt.show()
+
+
 if __name__ == "__main__":
     df = load_data(CSV_PATH)
 
     area = "City of Toronto"
-    property_type = "Detached"
+    property_type_list = ["Composite", "Detached", "Attached", "Townhouse", "Apartment"]
 
-    print(f"Training Q-Learning for {property_type} in {area}...")
-    q_agent, q_rewards = train_q_learning(df, area, property_type)
+    for property_type in property_type_list:
+        print(f"\n=== Training Q-Learning for {property_type} in {area} ===")
+        q_agent, q_rewards = train_q_learning(df, area, property_type)
 
-    print(f"Training PPO for {property_type} in {area}...")
-    ppo_model, ppo_vec_norm = train_ppo(df, area, property_type)
+        print(f"=== Training PPO for {property_type} in {area} ===")
+        #ppo_model, ppo_vec_norm = train_ppo(df, area, property_type)
 
-    print(f"Training A2C for {property_type} in {area}...")
-    a2c_model, a2c_vec_norm = train_a2c(df, area, property_type)
+        print(f"=== Training A2C for {property_type} in {area} ===")
+        #a2c_model, a2c_vec_norm = train_a2c(df, area, property_type)
 
-    print("Evaluating models...")
-    q_eval = evaluate_q_learning(q_agent, df, area, property_type)
-    ppo_eval = evaluate_policy_model(ppo_model, ppo_vec_norm, df, area, property_type, "PPO")
-    a2c_eval = evaluate_policy_model(a2c_model, a2c_vec_norm, df, area, property_type, "A2C")
-    bh_eval = evaluate_buy_and_hold(df, area, property_type)
+        print(f"=== Evaluating models for {property_type} in {area} ===")
+        q_eval = evaluate_q_learning(q_agent, df, area, property_type)
+        #ppo_eval = evaluate_policy_model(ppo_model, ppo_vec_norm, df, area, property_type, "PPO")
+        #a2c_eval = evaluate_policy_model(a2c_model, a2c_vec_norm, df, area, property_type, "A2C")
+        #bh_eval = evaluate_buy_and_hold(df, area, property_type)
 
-    print("\nFinal portfolio values:")
-    print(f"Q-Learning:   ${q_eval['PortfolioValue'].iloc[-1]:,.2f}")
-    print(f"PPO:          ${ppo_eval['PortfolioValue'].iloc[-1]:,.2f}")
-    print(f"A2C:          ${a2c_eval['PortfolioValue'].iloc[-1]:,.2f}")
-    print(f"Buy-and-Hold: ${bh_eval['PortfolioValue'].iloc[-1]:,.2f}")
+        print("\nFinal portfolio values:")
+        print(f"Q-Learning:   ${q_eval['PortfolioValue'].iloc[-1]:,.2f}")
+        #print(f"PPO:          ${ppo_eval['PortfolioValue'].iloc[-1]:,.2f}")
+        #print(f"A2C:          ${a2c_eval['PortfolioValue'].iloc[-1]:,.2f}")
+        #print(f"Buy-and-Hold: ${bh_eval['PortfolioValue'].iloc[-1]:,.2f}")
 
-    plot_final_comparison(q_eval, ppo_eval, a2c_eval, bh_eval, area, property_type)
+        # =========================
+        # PLOT PORTFOLIO COMPARISON
+        # =========================
+        #plot_final_comparison(q_eval, ppo_eval, a2c_eval, bh_eval, area, property_type)
+
+        # =========================
+        # ACTION VISUALIZATIONS
+        # =========================
+        plot_with_actions(q_eval, f"Q-Learning Actions: {property_type}", f"q_actions_{property_type}.png")
+        #plot_with_actions(ppo_eval, f"PPO Actions: {property_type}", f"ppo_actions_{property_type}.png")
+        #plot_with_actions(a2c_eval, f"A2C Actions: {property_type}", f"a2c_actions_{property_type}.png")
+
+        plot_action_distribution(q_eval, f"Q-Learning ({property_type})", f"q_dist_{property_type}.png")
+        #plot_action_distribution(ppo_eval, f"PPO ({property_type})", f"ppo_dist_{property_type}.png")
+        #plot_action_distribution(a2c_eval, f"A2C ({property_type})", f"a2c_dist_{property_type}.png")
