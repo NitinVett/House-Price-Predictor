@@ -1,0 +1,117 @@
+
+=== Training Q-Learning for Composite in City of Toronto ===
+=== Training PPO for Composite in City of Toronto ===
+=== Training A2C for Composite in City of Toronto ===
+=== Evaluating models for Composite in City of Toronto ===
+
+Q-Learning Action Distribution:
+{'BUY': 1, 'SELL': 0, 'HOLD': 131}
+{'BUY': '0.76%', 'SELL': '0.00%', 'HOLD': '99.24%'}
+
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 129}
+{'BUY': '1.52%', 'SELL': '0.76%', 'HOLD': '97.73%'}
+
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 123}
+{'BUY': '3.79%', 'SELL': '3.03%', 'HOLD': '93.18%'}
+
+Final portfolio values:
+Q-Learning:   $1,350,600.00
+PPO:          $1,341,100.00
+A2C:          $1,344,600.00
+Buy-and-Hold: $1,350,100.00
+
+=== Training Q-Learning for Detached in City of Toronto ===
+=== Training PPO for Detached in City of Toronto ===
+=== Training A2C for Detached in City of Toronto ===
+=== Evaluating models for Detached in City of Toronto ===
+
+Q-Learning Action Distribution:
+{'BUY': 2, 'SELL': 1, 'HOLD': 129}
+{'BUY': '1.52%', 'SELL': '0.76%', 'HOLD': '97.73%'}
+
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 98}
+{'BUY': '2.91%', 'SELL': '1.94%', 'HOLD': '95.15%'}
+
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 119}
+{'BUY': '3.91%', 'SELL': '3.12%', 'HOLD': '92.97%'}
+
+Final portfolio values:
+Q-Learning:   $1,546,000.00
+PPO:          $1,538,300.00
+A2C:          $1,609,100.00
+Buy-and-Hold: $1,501,800.00
+
+=== Training Q-Learning for Attached in City of Toronto ===
+=== Training PPO for Attached in City of Toronto ===
+=== Training A2C for Attached in City of Toronto ===
+=== Evaluating models for Attached in City of Toronto ===
+
+Q-Learning Action Distribution:
+{'BUY': 3, 'SELL': 2, 'HOLD': 127}
+{'BUY': '2.27%', 'SELL': '1.52%', 'HOLD': '96.21%'}
+
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 5, 'HOLD': 115}
+{'BUY': '4.00%', 'SELL': '4.00%', 'HOLD': '92.00%'}
+
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 121}
+{'BUY': '4.55%', 'SELL': '3.79%', 'HOLD': '91.67%'}
+
+Final portfolio values:
+Q-Learning:   $1,424,700.00
+PPO:          $1,441,900.00
+A2C:          $1,439,800.00
+Buy-and-Hold: $1,398,200.00
+
+=== Training Q-Learning for Townhouse in City of Toronto ===
+=== Training PPO for Townhouse in City of Toronto ===
+=== Training A2C for Townhouse in City of Toronto ===
+=== Evaluating models for Townhouse in City of Toronto ===
+
+Q-Learning Action Distribution:
+{'BUY': 20, 'SELL': 0, 'HOLD': 112}
+{'BUY': '15.15%', 'SELL': '0.00%', 'HOLD': '84.85%'}
+
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 129}
+{'BUY': '1.52%', 'SELL': '0.76%', 'HOLD': '97.73%'}
+
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 129}
+{'BUY': '1.52%', 'SELL': '0.76%', 'HOLD': '97.73%'}
+
+Final portfolio values:
+Q-Learning:   $1,238,900.00
+PPO:          $1,238,000.00
+A2C:          $1,262,200.00
+Buy-and-Hold: $1,238,400.00
+
+=== Training Q-Learning for Apartment in City of Toronto ===
+=== Training PPO for Apartment in City of Toronto ===
+=== Training A2C for Apartment in City of Toronto ===
+=== Evaluating models for Apartment in City of Toronto ===
+
+Q-Learning Action Distribution:
+{'BUY': 1, 'SELL': 0, 'HOLD': 129}
+{'BUY': '0.77%', 'SELL': '0.00%', 'HOLD': '99.23%'}
+
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 123}
+{'BUY': '0.81%', 'SELL': '0.00%', 'HOLD': '99.19%'}
+
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 127}
+{'BUY': '1.54%', 'SELL': '0.77%', 'HOLD': '97.69%'}
+
+Final portfolio values:
+Q-Learning:   $1,214,400.00
+PPO:          $1,214,400.00
+A2C:          $1,192,400.00
+Buy-and-Hold: $1,213,900.00
+
+Process finished with exit code 0

@@ -48,7 +48,6 @@ ACTIONS = {
     2: "HOLD",
 }
 
-
 # ============================================================
 # LOAD + PREP DATA
 # ============================================================
@@ -102,7 +101,6 @@ def load_data(csv_path: str) -> pd.DataFrame:
     df = df.dropna().reset_index(drop=True)
     return df
 
-
 # ============================================================
 # DISCRETIZATION FOR Q-LEARNING
 # ============================================================
@@ -116,14 +114,12 @@ def bucket_return(x: float) -> str:
         return "UP_SMALL"
     return "UP_BIG"
 
-
 def bucket_momentum(x: float) -> str:
     if x < -0.02:
         return "WEAK"
     if x < 0.02:
         return "NEUTRAL"
     return "STRONG"
-
 
 # ============================================================
 # TABULAR ENV FOR Q-LEARNING
@@ -134,7 +130,7 @@ class HousingEnv:
         self.df = df[
             (df[AREA_COL] == selected_area) &
             (df[TYPE_COL] == selected_type)
-            ].copy().reset_index(drop=True)
+        ].copy().reset_index(drop=True)
 
         if len(self.df) < 12:
             raise ValueError("Not enough data for this area/property type.")
@@ -206,8 +202,6 @@ class HousingEnv:
         reward = 100.0 * ((new_value - old_value) / max(old_value, 1.0)) + invalid_penalty
         next_state = self._get_state()
         return next_state, reward, self.done
-
-
 # ============================================================
 # Q-LEARNING AGENT
 # ============================================================
@@ -226,7 +220,6 @@ class QLearningAgent:
         td_target = reward + GAMMA * best_next
         td_error = td_target - self.q_table[state][action]
         self.q_table[state][action] += ALPHA * td_error
-
 
 def train_q_learning(df: pd.DataFrame, selected_area: str, selected_type: str):
     env = HousingEnv(df, selected_area, selected_type)
@@ -251,7 +244,6 @@ def train_q_learning(df: pd.DataFrame, selected_area: str, selected_type: str):
         epsilon = max(EPSILON_MIN, epsilon * EPSILON_DECAY)
 
     return agent, rewards_per_episode
-
 
 def evaluate_q_learning(agent: QLearningAgent, df: pd.DataFrame, selected_area: str, selected_type: str):
     env = HousingEnv(df, selected_area, selected_type)
@@ -292,7 +284,6 @@ def evaluate_q_learning(agent: QLearningAgent, df: pd.DataFrame, selected_area: 
         "Model": "Q-Learning",
     })
 
-
 # ============================================================
 # GYM ENV FOR PPO / A2C
 # ============================================================
@@ -306,7 +297,7 @@ class HousingGymEnv(gym.Env):
         self.df = df[
             (df[AREA_COL] == selected_area) &
             (df[TYPE_COL] == selected_type)
-            ].copy().reset_index(drop=True)
+        ].copy().reset_index(drop=True)
 
         if len(self.df) < 12:
             raise ValueError("Not enough data for this area/property type.")
@@ -409,7 +400,6 @@ class HousingGymEnv(gym.Env):
 
         return self._get_obs(), float(reward), terminated, truncated, {}
 
-
 # ============================================================
 # PPO / A2C TRAINING HELPERS
 # ============================================================
@@ -417,9 +407,7 @@ class HousingGymEnv(gym.Env):
 def make_rl_env(df: pd.DataFrame, selected_area: str, selected_type: str):
     def _init():
         return HousingGymEnv(df, selected_area, selected_type)
-
     return _init
-
 
 def train_ppo(df: pd.DataFrame, selected_area: str, selected_type: str):
     vec_env = DummyVecEnv([make_rl_env(df, selected_area, selected_type)])
@@ -444,7 +432,6 @@ def train_ppo(df: pd.DataFrame, selected_area: str, selected_type: str):
     model.learn(total_timesteps=PPO_TIMESTEPS)
     return model, vec_env
 
-
 def train_a2c(df: pd.DataFrame, selected_area: str, selected_type: str):
     vec_env = DummyVecEnv([make_rl_env(df, selected_area, selected_type)])
     vec_env = VecNormalize(vec_env, norm_obs=True, norm_reward=True, clip_obs=10.0)
@@ -465,9 +452,7 @@ def train_a2c(df: pd.DataFrame, selected_area: str, selected_type: str):
     model.learn(total_timesteps=A2C_TIMESTEPS)
     return model, vec_env
 
-
-def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selected_area: str, selected_type: str,
-                          label: str):
+def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selected_area: str, selected_type: str, label: str):
     raw_env = HousingGymEnv(df, selected_area, selected_type)
     obs, _ = raw_env.reset()
 
@@ -490,9 +475,9 @@ def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selec
 
         # Check validity BEFORE stepping
         valid_action = (
-                (action_int == 0 and raw_env._can_buy()) or
-                (action_int == 1 and raw_env._can_sell()) or
-                (action_int == 2)  # HOLD always valid
+            (action_int == 0 and raw_env._can_buy()) or
+            (action_int == 1 and raw_env._can_sell()) or
+            (action_int == 2)  # HOLD always valid
         )
 
         obs, reward, terminated, truncated, _ = raw_env.step(action_int)
@@ -507,8 +492,7 @@ def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selec
         actions.append(action_name if valid_action else f"INVALID_{action_name}")
 
     total = sum(action_counts.values())
-    action_percent = {k: (v / total) * 100 for k, v in action_counts.items()} if total > 0 else {k: 0.0 for k in
-                                                                                                 action_counts}
+    action_percent = {k: (v / total) * 100 for k, v in action_counts.items()} if total > 0 else {k: 0.0 for k in action_counts}
 
     print(f"\n{label} Action Distribution (valid only):")
     print(action_counts)
@@ -521,7 +505,6 @@ def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selec
         "Model": label,
     })
 
-
 # ============================================================
 # BUY-AND-HOLD BASELINE
 # ============================================================
@@ -530,7 +513,7 @@ def evaluate_buy_and_hold(df: pd.DataFrame, selected_area: str, selected_type: s
     subset = df[
         (df[AREA_COL] == selected_area) &
         (df[TYPE_COL] == selected_type)
-        ].copy().reset_index(drop=True)
+    ].copy().reset_index(drop=True)
 
     first_price = float(subset.iloc[0][PRICE_COL])
 
@@ -557,18 +540,17 @@ def evaluate_buy_and_hold(df: pd.DataFrame, selected_area: str, selected_type: s
         "Model": "Buy-and-Hold",
     })
 
-
 # ============================================================
 # PLOT
 # ============================================================
 
 def plot_final_comparison(
-        q_df: pd.DataFrame,
-        ppo_df: pd.DataFrame,
-        a2c_df: pd.DataFrame,
-        bh_df: pd.DataFrame,
-        area: str,
-        property_type: str
+    q_df: pd.DataFrame,
+    ppo_df: pd.DataFrame,
+    a2c_df: pd.DataFrame,
+    bh_df: pd.DataFrame,
+    area: str,
+    property_type: str
 ):
     plt.figure(figsize=(11, 6))
     plt.plot(q_df["Date"], q_df["PortfolioValue"], label="Q-Learning")
@@ -583,7 +565,6 @@ def plot_final_comparison(
     plt.tight_layout()
     plt.savefig("final_comparison.png", dpi=200)
     plt.show()
-
 
 # ============================================================
 # MAIN
@@ -611,7 +592,6 @@ def plot_with_actions(df: pd.DataFrame, title: str, filename: str):
 
     plt.savefig(filename, dpi=200)
     plt.show()
-
 
 def plot_action_distribution(df: pd.DataFrame, title: str, filename: str):
     action_counts = df["Action"].value_counts()
