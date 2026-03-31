@@ -48,6 +48,7 @@ ACTIONS = {
     2: "HOLD",
 }
 
+
 # ============================================================
 # LOAD + PREP DATA
 # ============================================================
@@ -101,6 +102,7 @@ def load_data(csv_path: str) -> pd.DataFrame:
     df = df.dropna().reset_index(drop=True)
     return df
 
+
 # ============================================================
 # DISCRETIZATION FOR Q-LEARNING
 # ============================================================
@@ -114,12 +116,14 @@ def bucket_return(x: float) -> str:
         return "UP_SMALL"
     return "UP_BIG"
 
+
 def bucket_momentum(x: float) -> str:
     if x < -0.02:
         return "WEAK"
     if x < 0.02:
         return "NEUTRAL"
     return "STRONG"
+
 
 # ============================================================
 # TABULAR ENV FOR Q-LEARNING
@@ -130,7 +134,7 @@ class HousingEnv:
         self.df = df[
             (df[AREA_COL] == selected_area) &
             (df[TYPE_COL] == selected_type)
-        ].copy().reset_index(drop=True)
+            ].copy().reset_index(drop=True)
 
         if len(self.df) < 12:
             raise ValueError("Not enough data for this area/property type.")
@@ -202,6 +206,8 @@ class HousingEnv:
         reward = 100.0 * ((new_value - old_value) / max(old_value, 1.0)) + invalid_penalty
         next_state = self._get_state()
         return next_state, reward, self.done
+
+
 # ============================================================
 # Q-LEARNING AGENT
 # ============================================================
@@ -220,6 +226,7 @@ class QLearningAgent:
         td_target = reward + GAMMA * best_next
         td_error = td_target - self.q_table[state][action]
         self.q_table[state][action] += ALPHA * td_error
+
 
 def train_q_learning(df: pd.DataFrame, selected_area: str, selected_type: str):
     env = HousingEnv(df, selected_area, selected_type)
@@ -244,6 +251,7 @@ def train_q_learning(df: pd.DataFrame, selected_area: str, selected_type: str):
         epsilon = max(EPSILON_MIN, epsilon * EPSILON_DECAY)
 
     return agent, rewards_per_episode
+
 
 def evaluate_q_learning(agent: QLearningAgent, df: pd.DataFrame, selected_area: str, selected_type: str):
     env = HousingEnv(df, selected_area, selected_type)
@@ -284,6 +292,7 @@ def evaluate_q_learning(agent: QLearningAgent, df: pd.DataFrame, selected_area: 
         "Model": "Q-Learning",
     })
 
+
 # ============================================================
 # GYM ENV FOR PPO / A2C
 # ============================================================
@@ -297,7 +306,7 @@ class HousingGymEnv(gym.Env):
         self.df = df[
             (df[AREA_COL] == selected_area) &
             (df[TYPE_COL] == selected_type)
-        ].copy().reset_index(drop=True)
+            ].copy().reset_index(drop=True)
 
         if len(self.df) < 12:
             raise ValueError("Not enough data for this area/property type.")
@@ -305,11 +314,11 @@ class HousingGymEnv(gym.Env):
         self.action_space = spaces.Discrete(3)
 
         # [return_1m, momentum_3, momentum_6, yoy_change, price_rel,
-        #  holding, cash_ratio, unrealized_pnl, can_buy, can_sell]
+        #  holding, cash_ratio, unrealized_pnl]
         self.observation_space = spaces.Box(
             low=-10.0,
             high=10.0,
-            shape=(10,),
+            shape=(8,),
             dtype=np.float32,
         )
 
@@ -348,8 +357,6 @@ class HousingGymEnv(gym.Env):
             float(self.holding),
             float(np.clip(self.cash / INITIAL_CASH, 0.0, 5.0)),
             float(np.clip(unrealized, -1.0, 1.0)),
-            float(self._can_buy()),
-            float(self._can_sell()),
         ], dtype=np.float32)
 
         return obs
@@ -400,11 +407,8 @@ class HousingGymEnv(gym.Env):
         reward = 100.0 * ((new_value - old_value) / max(old_value, 1.0))
         reward += invalid_penalty
 
-        if terminated:
-            zero_obs = np.zeros(self.observation_space.shape, dtype=np.float32)
-            return zero_obs, float(reward), terminated, truncated, {}
-
         return self._get_obs(), float(reward), terminated, truncated, {}
+
 
 # ============================================================
 # PPO / A2C TRAINING HELPERS
@@ -413,7 +417,9 @@ class HousingGymEnv(gym.Env):
 def make_rl_env(df: pd.DataFrame, selected_area: str, selected_type: str):
     def _init():
         return HousingGymEnv(df, selected_area, selected_type)
+
     return _init
+
 
 def train_ppo(df: pd.DataFrame, selected_area: str, selected_type: str):
     vec_env = DummyVecEnv([make_rl_env(df, selected_area, selected_type)])
@@ -438,6 +444,7 @@ def train_ppo(df: pd.DataFrame, selected_area: str, selected_type: str):
     model.learn(total_timesteps=PPO_TIMESTEPS)
     return model, vec_env
 
+
 def train_a2c(df: pd.DataFrame, selected_area: str, selected_type: str):
     vec_env = DummyVecEnv([make_rl_env(df, selected_area, selected_type)])
     vec_env = VecNormalize(vec_env, norm_obs=True, norm_reward=True, clip_obs=10.0)
@@ -458,7 +465,9 @@ def train_a2c(df: pd.DataFrame, selected_area: str, selected_type: str):
     model.learn(total_timesteps=A2C_TIMESTEPS)
     return model, vec_env
 
-def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selected_area: str, selected_type: str, label: str):
+
+def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selected_area: str, selected_type: str,
+                          label: str):
     raw_env = HousingGymEnv(df, selected_area, selected_type)
     obs, _ = raw_env.reset()
 
@@ -479,20 +488,29 @@ def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selec
         action_int = int(action[0])
         action_name = ACTIONS[action_int]
 
-        action_counts[action_name] += 1
+        # Check validity BEFORE stepping
+        valid_action = (
+                (action_int == 0 and raw_env._can_buy()) or
+                (action_int == 1 and raw_env._can_sell()) or
+                (action_int == 2)  # HOLD always valid
+        )
 
         obs, reward, terminated, truncated, _ = raw_env.step(action_int)
         done = terminated or truncated
 
+        # Only count valid actions
+        if valid_action:
+            action_counts[action_name] += 1
+
         dates.append(raw_env.df.iloc[raw_env.idx][DATE_COL])
         values.append(raw_env._portfolio_value(raw_env._current_price()))
-        actions.append(action_name)
+        actions.append(action_name if valid_action else f"INVALID_{action_name}")
 
-    # Convert to %
     total = sum(action_counts.values())
-    action_percent = {k: (v / total) * 100 for k, v in action_counts.items()}
+    action_percent = {k: (v / total) * 100 for k, v in action_counts.items()} if total > 0 else {k: 0.0 for k in
+                                                                                                 action_counts}
 
-    print(f"\n{label} Action Distribution:")
+    print(f"\n{label} Action Distribution (valid only):")
     print(action_counts)
     print({k: f"{v:.2f}%" for k, v in action_percent.items()})
 
@@ -503,6 +521,7 @@ def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selec
         "Model": label,
     })
 
+
 # ============================================================
 # BUY-AND-HOLD BASELINE
 # ============================================================
@@ -511,7 +530,7 @@ def evaluate_buy_and_hold(df: pd.DataFrame, selected_area: str, selected_type: s
     subset = df[
         (df[AREA_COL] == selected_area) &
         (df[TYPE_COL] == selected_type)
-    ].copy().reset_index(drop=True)
+        ].copy().reset_index(drop=True)
 
     first_price = float(subset.iloc[0][PRICE_COL])
 
@@ -538,17 +557,18 @@ def evaluate_buy_and_hold(df: pd.DataFrame, selected_area: str, selected_type: s
         "Model": "Buy-and-Hold",
     })
 
+
 # ============================================================
 # PLOT
 # ============================================================
 
 def plot_final_comparison(
-    q_df: pd.DataFrame,
-    ppo_df: pd.DataFrame,
-    a2c_df: pd.DataFrame,
-    bh_df: pd.DataFrame,
-    area: str,
-    property_type: str
+        q_df: pd.DataFrame,
+        ppo_df: pd.DataFrame,
+        a2c_df: pd.DataFrame,
+        bh_df: pd.DataFrame,
+        area: str,
+        property_type: str
 ):
     plt.figure(figsize=(11, 6))
     plt.plot(q_df["Date"], q_df["PortfolioValue"], label="Q-Learning")
@@ -563,6 +583,7 @@ def plot_final_comparison(
     plt.tight_layout()
     plt.savefig("final_comparison.png", dpi=200)
     plt.show()
+
 
 # ============================================================
 # MAIN
@@ -590,6 +611,7 @@ def plot_with_actions(df: pd.DataFrame, title: str, filename: str):
 
     plt.savefig(filename, dpi=200)
     plt.show()
+
 
 def plot_action_distribution(df: pd.DataFrame, title: str, filename: str):
     action_counts = df["Action"].value_counts()
@@ -624,35 +646,35 @@ if __name__ == "__main__":
         q_agent, q_rewards = train_q_learning(df, area, property_type)
 
         print(f"=== Training PPO for {property_type} in {area} ===")
-        #ppo_model, ppo_vec_norm = train_ppo(df, area, property_type)
+        ppo_model, ppo_vec_norm = train_ppo(df, area, property_type)
 
         print(f"=== Training A2C for {property_type} in {area} ===")
-        #a2c_model, a2c_vec_norm = train_a2c(df, area, property_type)
+        a2c_model, a2c_vec_norm = train_a2c(df, area, property_type)
 
         print(f"=== Evaluating models for {property_type} in {area} ===")
         q_eval = evaluate_q_learning(q_agent, df, area, property_type)
-        #ppo_eval = evaluate_policy_model(ppo_model, ppo_vec_norm, df, area, property_type, "PPO")
-        #a2c_eval = evaluate_policy_model(a2c_model, a2c_vec_norm, df, area, property_type, "A2C")
-        #bh_eval = evaluate_buy_and_hold(df, area, property_type)
+        ppo_eval = evaluate_policy_model(ppo_model, ppo_vec_norm, df, area, property_type, "PPO")
+        a2c_eval = evaluate_policy_model(a2c_model, a2c_vec_norm, df, area, property_type, "A2C")
+        bh_eval = evaluate_buy_and_hold(df, area, property_type)
 
         print("\nFinal portfolio values:")
         print(f"Q-Learning:   ${q_eval['PortfolioValue'].iloc[-1]:,.2f}")
-        #print(f"PPO:          ${ppo_eval['PortfolioValue'].iloc[-1]:,.2f}")
-        #print(f"A2C:          ${a2c_eval['PortfolioValue'].iloc[-1]:,.2f}")
-        #print(f"Buy-and-Hold: ${bh_eval['PortfolioValue'].iloc[-1]:,.2f}")
+        print(f"PPO:          ${ppo_eval['PortfolioValue'].iloc[-1]:,.2f}")
+        print(f"A2C:          ${a2c_eval['PortfolioValue'].iloc[-1]:,.2f}")
+        print(f"Buy-and-Hold: ${bh_eval['PortfolioValue'].iloc[-1]:,.2f}")
 
         # =========================
         # PLOT PORTFOLIO COMPARISON
         # =========================
-        #plot_final_comparison(q_eval, ppo_eval, a2c_eval, bh_eval, area, property_type)
+        plot_final_comparison(q_eval, ppo_eval, a2c_eval, bh_eval, area, property_type)
 
         # =========================
         # ACTION VISUALIZATIONS
         # =========================
         plot_with_actions(q_eval, f"Q-Learning Actions: {property_type}", f"q_actions_{property_type}.png")
-        #plot_with_actions(ppo_eval, f"PPO Actions: {property_type}", f"ppo_actions_{property_type}.png")
-        #plot_with_actions(a2c_eval, f"A2C Actions: {property_type}", f"a2c_actions_{property_type}.png")
+        plot_with_actions(ppo_eval, f"PPO Actions: {property_type}", f"ppo_actions_{property_type}.png")
+        plot_with_actions(a2c_eval, f"A2C Actions: {property_type}", f"a2c_actions_{property_type}.png")
 
         plot_action_distribution(q_eval, f"Q-Learning ({property_type})", f"q_dist_{property_type}.png")
-        #plot_action_distribution(ppo_eval, f"PPO ({property_type})", f"ppo_dist_{property_type}.png")
-        #plot_action_distribution(a2c_eval, f"A2C ({property_type})", f"a2c_dist_{property_type}.png")
+        plot_action_distribution(ppo_eval, f"PPO ({property_type})", f"ppo_dist_{property_type}.png")
+        plot_action_distribution(a2c_eval, f"A2C ({property_type})", f"a2c_dist_{property_type}.png")
