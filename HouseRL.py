@@ -640,7 +640,7 @@ def plot_final_comparison(
     plt.legend()
     plt.tight_layout()
     plt.savefig(filename, dpi=200)
-    plt.show()
+    plt.close()
 
 def plot_with_actions(df: pd.DataFrame, title: str, filename: str):
     plt.figure(figsize=(11, 6))
@@ -678,7 +678,7 @@ def plot_with_actions(df: pd.DataFrame, title: str, filename: str):
     plt.tight_layout()
 
     plt.savefig(filename, dpi=200)
-    plt.show()
+    plt.close()
 
 def plot_action_distribution(df: pd.DataFrame, title: str, filename: str):
     action_counts = df["Action"].value_counts()
@@ -698,7 +698,7 @@ def plot_action_distribution(df: pd.DataFrame, title: str, filename: str):
 
     plt.tight_layout()
     plt.savefig(filename, dpi=200)
-    plt.show()
+    plt.close()
 
 # ============================================================
 # MAIN
@@ -764,6 +764,16 @@ if __name__ == "__main__":
                 append_output_text(output_path, f"PPO:          ${ppo_val:,.2f}")
                 append_output_text(output_path, f"A2C:          ${a2c_val:,.2f}")
                 append_output_text(output_path, f"Buy-and-Hold: ${bh_val:,.2f}")
+
+                for label, eval_df in [("Q-Learning", q_eval), ("PPO", ppo_eval), ("A2C", a2c_eval)]:
+                    counts = eval_df[eval_df["Action"].isin(ACTIONS.values())]["Action"].value_counts()
+                    counts = {a: int(counts.get(a, 0)) for a in ACTIONS.values()}
+                    total_actions = sum(counts.values())
+                    pcts = {k: f"{(v / total_actions * 100):.2f}%" for k, v in counts.items()} if total_actions > 0 else {k: "0.00%" for k in counts}
+                    append_output_text(output_path, f"{label} Action Distribution (valid only):")
+                    append_output_text(output_path, str(counts))
+                    append_output_text(output_path, str(pcts))
+
                 append_output_text(output_path, "")
 
                 safe_type = sanitize_filename(property_type)
