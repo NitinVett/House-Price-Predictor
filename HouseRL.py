@@ -102,6 +102,28 @@ def load_data(csv_path: str) -> pd.DataFrame:
     df = df.dropna().reset_index(drop=True)
     return df
 
+
+def sanitize_filename(value: str) -> str:
+    return "".join(c if c.isalnum() or c in "-_" else "_" for c in value).strip("_")
+
+
+def get_unique_areas(df: pd.DataFrame) -> list[str]:
+    return sorted(df[AREA_COL].dropna().unique())
+
+
+def append_output_text(path: str, text: str) -> None:
+    with open(path, "a", encoding="utf-8") as file:
+        file.write(text)
+        if not text.endswith("\n"):
+            file.write("\n")
+
+
+def write_output_header(path: str, header: str) -> None:
+    with open(path, "w", encoding="utf-8") as file:
+        file.write(header)
+        if not header.endswith("\n"):
+            file.write("\n")
+
 # ============================================================
 # DISCRETIZATION FOR Q-LEARNING
 # ============================================================
@@ -603,7 +625,8 @@ def plot_final_comparison(
     a2c_df: pd.DataFrame,
     bh_df: pd.DataFrame,
     area: str,
-    property_type: str
+    property_type: str,
+    filename: str = "final_comparison.png"
 ):
     plt.figure(figsize=(11, 6))
     plt.plot(q_df["Date"], q_df["PortfolioValue"], label="Q-Learning")
@@ -616,7 +639,7 @@ def plot_final_comparison(
     plt.ylabel("Portfolio Value")
     plt.legend()
     plt.tight_layout()
-    plt.savefig("final_comparison.png", dpi=200)
+    plt.savefig(filename, dpi=200)
     plt.show()
 
 def plot_with_actions(df: pd.DataFrame, title: str, filename: str):
@@ -683,38 +706,111 @@ def plot_action_distribution(df: pd.DataFrame, title: str, filename: str):
 
 if __name__ == "__main__":
     df = load_data(CSV_PATH)
-
-    area = "City of Toronto"
     property_type_list = ["Composite", "Detached", "Attached", "Townhouse", "Apartment"]
+    areas = get_unique_areas(df)
+    output_path = "output.txt"
+    write_output_header(output_path, "HouseRL run output")
+    append_output_text(output_path, f"CSV: {CSV_PATH}")
+    append_output_text(output_path, "")
 
-    for property_type in property_type_list:
-        print(f"\n=== Training Q-Learning for {property_type} in {area} ===")
-        q_agent, q_rewards = train_q_learning(df, area, property_type)
+    for area in areas:
+        print(f"\n=== Running area: {area} ===")
+        append_output_text(output_path, f"=== Running area: {area} ===")
+        safe_area = sanitize_filename(area)
 
-        print(f"=== Training PPO for {property_type} in {area} ===")
-        ppo_model, ppo_vec_norm = train_ppo(df, area, property_type)
+        for property_type in property_type_list:
+            try:
+                print(f"\n=== Training Q-Learning for {property_type} in {area} ===")
+                q_agent, q_rewards = train_q_learning(df, area, property_type)
 
-        print(f"=== Training A2C for {property_type} in {area} ===")
-        a2c_model, a2c_vec_norm = train_a2c(df, area, property_type)
+                print(f"=== Training PPO for {property_type} in {area} ===")
+                ppo_model, ppo_vec_norm = train_ppo(df, area, property_type)
 
-        print(f"=== Evaluating models for {property_type} in {area} ===")
-        q_eval = evaluate_q_learning(q_agent, df, area, property_type)
-        ppo_eval = evaluate_policy_model(ppo_model, ppo_vec_norm, df, area, property_type, "PPO")
-        a2c_eval = evaluate_policy_model(a2c_model, a2c_vec_norm, df, area, property_type, "A2C")
-        bh_eval = evaluate_buy_and_hold(df, area, property_type)
+                print(f"=== Training A2C for {property_type} in {area} ===")
+                a2c_model, a2c_vec_norm = train_a2c(df, area, property_type)
 
-        print("\nFinal portfolio values:")
-        print(f"Q-Learning:   ${q_eval['PortfolioValue'].iloc[-1]:,.2f}")
-        print(f"PPO:          ${ppo_eval['PortfolioValue'].iloc[-1]:,.2f}")
-        print(f"A2C:          ${a2c_eval['PortfolioValue'].iloc[-1]:,.2f}")
-        print(f"Buy-and-Hold: ${bh_eval['PortfolioValue'].iloc[-1]:,.2f}")
+                print(f"=== Evaluating models for {property_type} in {area} ===")
+                q_eval = evaluate_q_learning(q_agent, df, area, property_type)
+                ppo_eval = evaluate_policy_model(
+                    ppo_model,
+                    ppo_vec_norm,
+                    df,
+                    area,
+                    property_type,
+                    "PPO",
+                )
+                a2c_eval = evaluate_policy_model(
+                    a2c_model,
+                    a2c_vec_norm,
+                    df,
+                    area,
+                    property_type,
+                    "A2C",
+                )
+                bh_eval = evaluate_buy_and_hold(df, area, property_type)
 
-        plot_final_comparison(q_eval, ppo_eval, a2c_eval, bh_eval, area, property_type)
+                print("\nFinal portfolio values:")
+                q_val = q_eval['PortfolioValue'].iloc[-1]
+                ppo_val = ppo_eval['PortfolioValue'].iloc[-1]
+                a2c_val = a2c_eval['PortfolioValue'].iloc[-1]
+                bh_val = bh_eval['PortfolioValue'].iloc[-1]
+                print(f"Q-Learning:   ${q_val:,.2f}")
+                print(f"PPO:          ${ppo_val:,.2f}")
+                print(f"A2C:          ${a2c_val:,.2f}")
+                print(f"Buy-and-Hold: ${bh_val:,.2f}")
 
-        plot_with_actions(q_eval, f"Q-Learning Actions: {property_type}", f"q_actions_{property_type}.png")
-        plot_with_actions(ppo_eval, f"PPO Actions: {property_type}", f"ppo_actions_{property_type}.png")
-        plot_with_actions(a2c_eval, f"A2C Actions: {property_type}", f"a2c_actions_{property_type}.png")
+                append_output_text(output_path, f"=== {property_type} in {area} ===")
+                append_output_text(output_path, f"Q-Learning:   ${q_val:,.2f}")
+                append_output_text(output_path, f"PPO:          ${ppo_val:,.2f}")
+                append_output_text(output_path, f"A2C:          ${a2c_val:,.2f}")
+                append_output_text(output_path, f"Buy-and-Hold: ${bh_val:,.2f}")
+                append_output_text(output_path, "")
 
-        plot_action_distribution(q_eval, f"Q-Learning ({property_type})", f"q_dist_{property_type}.png")
-        plot_action_distribution(ppo_eval, f"PPO ({property_type})", f"ppo_dist_{property_type}.png")
-        plot_action_distribution(a2c_eval, f"A2C ({property_type})", f"a2c_dist_{property_type}.png")
+                safe_type = sanitize_filename(property_type)
+                plot_final_comparison(
+                    q_eval,
+                    ppo_eval,
+                    a2c_eval,
+                    bh_eval,
+                    area,
+                    property_type,
+                    filename=f"final_comparison_{safe_area}_{safe_type}.png",
+                )
+
+                plot_with_actions(
+                    q_eval,
+                    f"Q-Learning Actions: {property_type}",
+                    f"q_actions_{safe_area}_{safe_type}.png",
+                )
+                plot_with_actions(
+                    ppo_eval,
+                    f"PPO Actions: {property_type}",
+                    f"ppo_actions_{safe_area}_{safe_type}.png",
+                )
+                plot_with_actions(
+                    a2c_eval,
+                    f"A2C Actions: {property_type}",
+                    f"a2c_actions_{safe_area}_{safe_type}.png",
+                )
+
+                plot_action_distribution(
+                    q_eval,
+                    f"Q-Learning ({property_type})",
+                    f"q_dist_{safe_area}_{safe_type}.png",
+                )
+                plot_action_distribution(
+                    ppo_eval,
+                    f"PPO ({property_type})",
+                    f"ppo_dist_{safe_area}_{safe_type}.png",
+                )
+                plot_action_distribution(
+                    a2c_eval,
+                    f"A2C ({property_type})",
+                    f"a2c_dist_{safe_area}_{safe_type}.png",
+                )
+            except ValueError as exc:
+                message = f"Skipping {property_type} in {area}: {exc}"
+                print(message)
+                append_output_text(output_path, message)
+                append_output_text(output_path, "")
+                continue
