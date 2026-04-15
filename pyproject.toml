@@ -1,7 +1,15 @@
 [project]
 name = "reinforcment-learning"
 version = "0.1.0"
-description = "Add your description here"
+description = "Toronto HPI reinforcement learning baseline with DQN, PPO, and A2C."
 readme = "README.md"
 requires-python = ">=3.11"
-dependencies = []
+dependencies = [
+    "gymnasium>=0.29",
+    "matplotlib>=3.8",
+    "numpy",
+    "pandas",
+    "scikit-learn",
+    "stable-baselines3>=2.3",
+    "torch>=2.2",
+]

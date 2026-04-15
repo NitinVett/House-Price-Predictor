@@ -29,6 +29,7 @@ PRICE_COL = "BenchmarkPrice"
 INITIAL_CASH = 1_000_000
 TRANSACTION_COST = 5_000
 HOLDING_COST_MONTHLY = 500
+INVALID_ACTION_PENALTY = 1.0
 
 # Q-learning
 EPISODES = 300
@@ -147,6 +148,26 @@ class HousingEnv:
         self.done = False
         return self._get_state()
 
+    def _current_price(self) -> float:
+        return float(self.df.iloc[self.idx][PRICE_COL])
+
+    def _portfolio_value(self, price: float) -> float:
+        return float(self.cash + (self.holding * price))
+
+    def _can_buy(self) -> bool:
+        return self.holding == 0 and self.cash >= self._current_price() + TRANSACTION_COST
+
+    def _can_sell(self) -> bool:
+        return self.holding == 1
+
+    def valid_actions(self):
+        actions = [2]  # HOLD always valid
+        if self._can_buy():
+            actions.append(0)
+        if self._can_sell():
+            actions.append(1)
+        return actions
+
     def _get_state(self):
         row = self.df.iloc[self.idx]
         return (
@@ -154,13 +175,9 @@ class HousingEnv:
             bucket_momentum(float(row["momentum_3"])),
             bucket_momentum(float(row["momentum_6"])),
             self.holding,
+            int(self._can_buy()),
+            int(self._can_sell()),
         )
-
-    def _current_price(self) -> float:
-        return float(self.df.iloc[self.idx][PRICE_COL])
-
-    def _portfolio_value(self, price: float) -> float:
-        return float(self.cash + (self.holding * price))
 
     def step(self, action: int):
         if self.done:
@@ -171,20 +188,20 @@ class HousingEnv:
         invalid_penalty = 0.0
 
         if action == 0:  # BUY
-            if self.holding == 0 and self.cash >= current_price + TRANSACTION_COST:
+            if self._can_buy():
                 self.cash -= (current_price + TRANSACTION_COST)
                 self.holding = 1
                 self.buy_price = current_price
             else:
-                invalid_penalty = -0.2  # ← was -2000.0
+                invalid_penalty = -INVALID_ACTION_PENALTY
 
         elif action == 1:  # SELL
-            if self.holding == 1:
+            if self._can_sell():
                 self.cash += (current_price - TRANSACTION_COST)
                 self.holding = 0
                 self.buy_price = 0.0
             else:
-                invalid_penalty = -0.2  # ← was -2000.0
+                invalid_penalty = -INVALID_ACTION_PENALTY
 
         elif action == 2:  # HOLD
             pass
@@ -202,6 +219,7 @@ class HousingEnv:
         reward = 100.0 * ((new_value - old_value) / max(old_value, 1.0)) + invalid_penalty
         next_state = self._get_state()
         return next_state, reward, self.done
+
 # ============================================================
 # Q-LEARNING AGENT
 # ============================================================
@@ -210,14 +228,28 @@ class QLearningAgent:
     def __init__(self):
         self.q_table = defaultdict(lambda: np.zeros(len(ACTIONS), dtype=np.float64))
 
-    def choose_action(self, state, epsilon: float) -> int:
+    def choose_action(self, state, epsilon: float, valid_actions):
         if random.random() < epsilon:
-            return random.choice(list(ACTIONS.keys()))
-        return int(np.argmax(self.q_table[state]))
+            return random.choice(valid_actions)
 
-    def update(self, state, action: int, reward: float, next_state):
-        best_next = np.max(self.q_table[next_state])
-        td_target = reward + GAMMA * best_next
+        q_values = self.q_table[state]
+        best_action = valid_actions[0]
+        best_value = q_values[best_action]
+
+        for action in valid_actions[1:]:
+            if q_values[action] > best_value:
+                best_value = q_values[action]
+                best_action = action
+
+        return int(best_action)
+
+    def update(self, state, action: int, reward: float, next_state, next_valid_actions, done: bool):
+        if done:
+            td_target = reward
+        else:
+            best_next = max(self.q_table[next_state][a] for a in next_valid_actions)
+            td_target = reward + GAMMA * best_next
+
         td_error = td_target - self.q_table[state][action]
         self.q_table[state][action] += ALPHA * td_error
 
@@ -234,9 +266,14 @@ def train_q_learning(df: pd.DataFrame, selected_area: str, selected_type: str):
         total_reward = 0.0
 
         while not done:
-            action = agent.choose_action(state, epsilon)
+            valid_actions = env.valid_actions()
+            action = agent.choose_action(state, epsilon, valid_actions)
+
             next_state, reward, done = env.step(action)
-            agent.update(state, action, reward, next_state)
+            next_valid_actions = env.valid_actions() if not done else [2]
+
+            agent.update(state, action, reward, next_state, next_valid_actions, done)
+
             state = next_state
             total_reward += reward
 
@@ -260,20 +297,29 @@ def evaluate_q_learning(agent: QLearningAgent, df: pd.DataFrame, selected_area: 
         action = int(np.argmax(agent.q_table[state]))
         action_name = ACTIONS[action]
 
-        action_counts[action_name] += 1
+        valid_action = (
+            (action == 0 and env.holding == 0 and env.cash >= env._current_price() + TRANSACTION_COST) or
+            (action == 1 and env.holding == 1) or
+            (action == 2)
+        )
 
         next_state, reward, done = env.step(action)
         state = next_state
 
+        if valid_action:
+            action_counts[action_name] += 1
+            logged_action = action_name
+        else:
+            logged_action = f"INVALID_{action_name}"
+
         dates.append(env.df.iloc[env.idx][DATE_COL])
         values.append(env._portfolio_value(env._current_price()))
-        actions.append(action_name)
+        actions.append(logged_action)
 
-    # Convert to %
     total = sum(action_counts.values())
-    action_percent = {k: (v / total) * 100 for k, v in action_counts.items()}
+    action_percent = {k: (v / total) * 100 for k, v in action_counts.items()} if total > 0 else {k: 0.0 for k in action_counts}
 
-    print("\nQ-Learning Action Distribution:")
+    print("\nQ-Learning Action Distribution (valid only):")
     print(action_counts)
     print({k: f"{v:.2f}%" for k, v in action_percent.items()})
 
@@ -305,11 +351,11 @@ class HousingGymEnv(gym.Env):
         self.action_space = spaces.Discrete(3)
 
         # [return_1m, momentum_3, momentum_6, yoy_change, price_rel,
-        #  holding, cash_ratio, unrealized_pnl]
+        #  holding, cash_ratio, unrealized_pnl, can_buy, can_sell]
         self.observation_space = spaces.Box(
             low=-10.0,
             high=10.0,
-            shape=(8,),
+            shape=(10,),
             dtype=np.float32,
         )
 
@@ -348,6 +394,8 @@ class HousingGymEnv(gym.Env):
             float(self.holding),
             float(np.clip(self.cash / INITIAL_CASH, 0.0, 5.0)),
             float(np.clip(unrealized, -1.0, 1.0)),
+            float(self._can_buy()),
+            float(self._can_sell()),
         ], dtype=np.float32)
 
         return obs
@@ -372,7 +420,7 @@ class HousingGymEnv(gym.Env):
                 self.holding = 1
                 self.buy_price = current_price
             else:
-                invalid_penalty = -0.2
+                invalid_penalty = -INVALID_ACTION_PENALTY
 
         elif action == 1:  # SELL
             if self._can_sell():
@@ -380,7 +428,7 @@ class HousingGymEnv(gym.Env):
                 self.holding = 0
                 self.buy_price = 0.0
             else:
-                invalid_penalty = -0.2
+                invalid_penalty = -INVALID_ACTION_PENALTY
 
         elif action == 2:  # HOLD
             pass
@@ -397,6 +445,10 @@ class HousingGymEnv(gym.Env):
 
         reward = 100.0 * ((new_value - old_value) / max(old_value, 1.0))
         reward += invalid_penalty
+
+        if terminated:
+            zero_obs = np.zeros(self.observation_space.shape, dtype=np.float32)
+            return zero_obs, float(reward), terminated, truncated, {}
 
         return self._get_obs(), float(reward), terminated, truncated, {}
 
@@ -473,17 +525,15 @@ def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selec
         action_int = int(action[0])
         action_name = ACTIONS[action_int]
 
-        # Check validity BEFORE stepping
         valid_action = (
             (action_int == 0 and raw_env._can_buy()) or
             (action_int == 1 and raw_env._can_sell()) or
-            (action_int == 2)  # HOLD always valid
+            (action_int == 2)
         )
 
         obs, reward, terminated, truncated, _ = raw_env.step(action_int)
         done = terminated or truncated
 
-        # Only count valid actions
         if valid_action:
             action_counts[action_name] += 1
 
@@ -492,7 +542,10 @@ def evaluate_policy_model(model, vec_norm: VecNormalize, df: pd.DataFrame, selec
         actions.append(action_name if valid_action else f"INVALID_{action_name}")
 
     total = sum(action_counts.values())
-    action_percent = {k: (v / total) * 100 for k, v in action_counts.items()} if total > 0 else {k: 0.0 for k in action_counts}
+    if total > 0:
+        action_percent = {k: (v / total) * 100 for k, v in action_counts.items()}
+    else:
+        action_percent = {k: 0.0 for k in action_counts}
 
     print(f"\n{label} Action Distribution (valid only):")
     print(action_counts)
@@ -566,23 +619,34 @@ def plot_final_comparison(
     plt.savefig("final_comparison.png", dpi=200)
     plt.show()
 
-# ============================================================
-# MAIN
-# ============================================================
-
 def plot_with_actions(df: pd.DataFrame, title: str, filename: str):
     plt.figure(figsize=(11, 6))
 
-    # Line plot
     plt.plot(df["Date"], df["PortfolioValue"], label=title)
 
-    # Filter actions
     buy_points = df[df["Action"] == "BUY"]
     sell_points = df[df["Action"] == "SELL"]
+    invalid_buy_points = df[df["Action"] == "INVALID_BUY"]
+    invalid_sell_points = df[df["Action"] == "INVALID_SELL"]
 
-    # Scatter markers
     plt.scatter(buy_points["Date"], buy_points["PortfolioValue"], marker="^", label="BUY")
     plt.scatter(sell_points["Date"], sell_points["PortfolioValue"], marker="v", label="SELL")
+
+    if not invalid_buy_points.empty:
+        plt.scatter(
+            invalid_buy_points["Date"],
+            invalid_buy_points["PortfolioValue"],
+            marker="x",
+            label="INVALID_BUY"
+        )
+
+    if not invalid_sell_points.empty:
+        plt.scatter(
+            invalid_sell_points["Date"],
+            invalid_sell_points["PortfolioValue"],
+            marker="x",
+            label="INVALID_SELL"
+        )
 
     plt.title(title)
     plt.xlabel("Date")
@@ -596,12 +660,11 @@ def plot_with_actions(df: pd.DataFrame, title: str, filename: str):
 def plot_action_distribution(df: pd.DataFrame, title: str, filename: str):
     action_counts = df["Action"].value_counts()
 
-    # Remove START if present
     if "START" in action_counts:
         action_counts = action_counts.drop("START")
 
     total = action_counts.sum()
-    percentages = (action_counts / total) * 100
+    percentages = (action_counts / total) * 100 if total > 0 else action_counts.astype(float)
 
     plt.figure(figsize=(6, 4))
     plt.bar(percentages.index, percentages.values)
@@ -614,6 +677,9 @@ def plot_action_distribution(df: pd.DataFrame, title: str, filename: str):
     plt.savefig(filename, dpi=200)
     plt.show()
 
+# ============================================================
+# MAIN
+# ============================================================
 
 if __name__ == "__main__":
     df = load_data(CSV_PATH)
@@ -643,14 +709,8 @@ if __name__ == "__main__":
         print(f"A2C:          ${a2c_eval['PortfolioValue'].iloc[-1]:,.2f}")
         print(f"Buy-and-Hold: ${bh_eval['PortfolioValue'].iloc[-1]:,.2f}")
 
-        # =========================
-        # PLOT PORTFOLIO COMPARISON
-        # =========================
         plot_final_comparison(q_eval, ppo_eval, a2c_eval, bh_eval, area, property_type)
 
-        # =========================
-        # ACTION VISUALIZATIONS
-        # =========================
         plot_with_actions(q_eval, f"Q-Learning Actions: {property_type}", f"q_actions_{property_type}.png")
         plot_with_actions(ppo_eval, f"PPO Actions: {property_type}", f"ppo_actions_{property_type}.png")
         plot_with_actions(a2c_eval, f"A2C Actions: {property_type}", f"a2c_actions_{property_type}.png")

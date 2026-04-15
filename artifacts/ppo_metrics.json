@@ -1,0 +1,89 @@
+{
+  "total_return": 0.0763156822810589,
+  "annualized_sharpe": 1.4001230886019613,
+  "max_drawdown": -0.020020020020020013,
+  "trade_count": 1,
+  "final_portfolio_value": 107631.56822810588,
+  "equity_curve": [
+    {
+      "date": "2020-03-01",
+      "portfolio_value": 100000.0,
+      "position": 0,
+      "action": 0
+    },
+    {
+      "date": "2020-04-01",
+      "portfolio_value": 100883.40122199591,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2020-05-01",
+      "portfolio_value": 101120.77393075355,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2020-06-01",
+      "portfolio_value": 99560.89613034623,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2020-07-01",
+      "portfolio_value": 101222.50509164968,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2020-08-01",
+      "portfolio_value": 101629.4297352342,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2020-09-01",
+      "portfolio_value": 101595.51934826883,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2020-10-01",
+      "portfolio_value": 100679.93890020365,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2020-11-01",
+      "portfolio_value": 100205.19348268838,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2020-12-01",
+      "portfolio_value": 99594.80651731159,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2021-01-01",
+      "portfolio_value": 100510.38696537676,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2021-02-01",
+      "portfolio_value": 103630.14256619144,
+      "position": 1,
+      "action": 1
+    },
+    {
+      "date": "2021-03-01",
+      "portfolio_value": 107631.56822810588,
+      "position": 1,
+      "action": 1
+    }
+  ],
+  "model_name": "ppo",
+  "model_path": "artifacts\\ppo_toronto_hpi.zip"
+}
