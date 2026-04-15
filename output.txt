@@ -1,117 +1,3999 @@
+HouseRL run output
+CSV: HousePricesDataset/MLS.csv
 
-=== Training Q-Learning for Composite in City of Toronto ===
-=== Training PPO for Composite in City of Toronto ===
-=== Training A2C for Composite in City of Toronto ===
-=== Evaluating models for Composite in City of Toronto ===
-
-Q-Learning Action Distribution:
-{'BUY': 1, 'SELL': 0, 'HOLD': 131}
-{'BUY': '0.76%', 'SELL': '0.00%', 'HOLD': '99.24%'}
-
+=== Running area: Ajax ===
+=== Composite in Ajax ===
+Q-Learning:   $1,424,100.00
+PPO:          $1,213,300.00
+A2C:          $1,443,700.00
+Buy-and-Hold: $1,361,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
 PPO Action Distribution (valid only):
-{'BUY': 2, 'SELL': 1, 'HOLD': 129}
-{'BUY': '1.52%', 'SELL': '0.76%', 'HOLD': '97.73%'}
-
+{'BUY': 6, 'SELL': 5, 'HOLD': 47}
+{'BUY': '10.34%', 'SELL': '8.62%', 'HOLD': '81.03%'}
 A2C Action Distribution (valid only):
-{'BUY': 5, 'SELL': 4, 'HOLD': 123}
-{'BUY': '3.79%', 'SELL': '3.03%', 'HOLD': '93.18%'}
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
 
-Final portfolio values:
-Q-Learning:   $1,350,600.00
-PPO:          $1,341,100.00
-A2C:          $1,344,600.00
-Buy-and-Hold: $1,350,100.00
-
-=== Training Q-Learning for Detached in City of Toronto ===
-=== Training PPO for Detached in City of Toronto ===
-=== Training A2C for Detached in City of Toronto ===
-=== Evaluating models for Detached in City of Toronto ===
-
-Q-Learning Action Distribution:
-{'BUY': 2, 'SELL': 1, 'HOLD': 129}
-{'BUY': '1.52%', 'SELL': '0.76%', 'HOLD': '97.73%'}
-
+=== Detached in Ajax ===
+Q-Learning:   $1,468,600.00
+PPO:          $1,422,800.00
+A2C:          $1,476,800.00
+Buy-and-Hold: $1,390,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
 PPO Action Distribution (valid only):
-{'BUY': 3, 'SELL': 2, 'HOLD': 98}
-{'BUY': '2.91%', 'SELL': '1.94%', 'HOLD': '95.15%'}
-
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
 A2C Action Distribution (valid only):
-{'BUY': 5, 'SELL': 4, 'HOLD': 119}
-{'BUY': '3.91%', 'SELL': '3.12%', 'HOLD': '92.97%'}
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
 
-Final portfolio values:
-Q-Learning:   $1,546,000.00
-PPO:          $1,538,300.00
-A2C:          $1,609,100.00
-Buy-and-Hold: $1,501,800.00
-
-=== Training Q-Learning for Attached in City of Toronto ===
-=== Training PPO for Attached in City of Toronto ===
-=== Training A2C for Attached in City of Toronto ===
-=== Evaluating models for Attached in City of Toronto ===
-
-Q-Learning Action Distribution:
-{'BUY': 3, 'SELL': 2, 'HOLD': 127}
-{'BUY': '2.27%', 'SELL': '1.52%', 'HOLD': '96.21%'}
-
+=== Attached in Ajax ===
+Q-Learning:   $1,398,800.00
+PPO:          $1,346,700.00
+A2C:          $1,411,600.00
+Buy-and-Hold: $1,326,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
 PPO Action Distribution (valid only):
-{'BUY': 5, 'SELL': 5, 'HOLD': 115}
-{'BUY': '4.00%', 'SELL': '4.00%', 'HOLD': '92.00%'}
-
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
 A2C Action Distribution (valid only):
-{'BUY': 6, 'SELL': 5, 'HOLD': 121}
-{'BUY': '4.55%', 'SELL': '3.79%', 'HOLD': '91.67%'}
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
 
-Final portfolio values:
-Q-Learning:   $1,424,700.00
-PPO:          $1,441,900.00
-A2C:          $1,439,800.00
-Buy-and-Hold: $1,398,200.00
-
-=== Training Q-Learning for Townhouse in City of Toronto ===
-=== Training PPO for Townhouse in City of Toronto ===
-=== Training A2C for Townhouse in City of Toronto ===
-=== Evaluating models for Townhouse in City of Toronto ===
-
-Q-Learning Action Distribution:
-{'BUY': 20, 'SELL': 0, 'HOLD': 112}
-{'BUY': '15.15%', 'SELL': '0.00%', 'HOLD': '84.85%'}
-
+=== Townhouse in Ajax ===
+Q-Learning:   $1,365,900.00
+PPO:          $1,297,000.00
+A2C:          $1,363,900.00
+Buy-and-Hold: $1,298,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
 PPO Action Distribution (valid only):
-{'BUY': 2, 'SELL': 1, 'HOLD': 129}
-{'BUY': '1.52%', 'SELL': '0.76%', 'HOLD': '97.73%'}
-
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
 A2C Action Distribution (valid only):
-{'BUY': 2, 'SELL': 1, 'HOLD': 129}
-{'BUY': '1.52%', 'SELL': '0.76%', 'HOLD': '97.73%'}
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
 
-Final portfolio values:
-Q-Learning:   $1,238,900.00
-PPO:          $1,238,000.00
-A2C:          $1,262,200.00
-Buy-and-Hold: $1,238,400.00
+=== Apartment in Ajax ===
+Q-Learning:   $1,222,000.00
+PPO:          $1,031,700.00
+A2C:          $1,242,100.00
+Buy-and-Hold: $1,195,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
 
-=== Training Q-Learning for Apartment in City of Toronto ===
-=== Training PPO for Apartment in City of Toronto ===
-=== Training A2C for Apartment in City of Toronto ===
-=== Evaluating models for Apartment in City of Toronto ===
+=== Running area: Aurora ===
+=== Composite in Aurora ===
+Q-Learning:   $1,484,400.00
+PPO:          $1,358,200.00
+A2C:          $1,548,600.00
+Buy-and-Hold: $1,364,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 44}
+{'BUY': '7.84%', 'SELL': '5.88%', 'HOLD': '86.27%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
 
-Q-Learning Action Distribution:
+=== Detached in Aurora ===
+Q-Learning:   $1,560,300.00
+PPO:          $1,464,900.00
+A2C:          $1,669,300.00
+Buy-and-Hold: $1,427,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 42}
+{'BUY': '6.38%', 'SELL': '4.26%', 'HOLD': '89.36%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Aurora ===
+Q-Learning:   $1,413,400.00
+PPO:          $1,132,000.00
+A2C:          $1,442,200.00
+Buy-and-Hold: $1,285,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 55}
+{'BUY': '5.00%', 'SELL': '3.33%', 'HOLD': '91.67%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Aurora ===
+Q-Learning:   $1,480,000.00
+PPO:          $1,397,800.00
+A2C:          $1,483,000.00
+Buy-and-Hold: $1,375,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in Aurora ===
+Q-Learning:   $1,205,600.00
+PPO:          $1,200,300.00
+A2C:          $1,260,700.00
+Buy-and-Hold: $1,199,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Brampton ===
+=== Composite in Brampton ===
+Q-Learning:   $1,433,400.00
+PPO:          $1,415,200.00
+A2C:          $1,448,100.00
+Buy-and-Hold: $1,393,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Brampton ===
+Q-Learning:   $1,497,800.00
+PPO:          $1,472,200.00
+A2C:          $1,508,700.00
+Buy-and-Hold: $1,442,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Brampton ===
+Q-Learning:   $1,413,400.00
+PPO:          $1,390,700.00
+A2C:          $1,409,600.00
+Buy-and-Hold: $1,370,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Brampton ===
+Q-Learning:   $1,233,300.00
+PPO:          $1,023,400.00
+A2C:          $1,250,100.00
+Buy-and-Hold: $1,253,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in Brampton ===
+Q-Learning:   $1,210,500.00
+PPO:          $1,215,100.00
+A2C:          $1,228,900.00
+Buy-and-Hold: $1,210,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Running area: Burlington ===
+=== Composite in Burlington ===
+Q-Learning:   $1,338,800.00
+PPO:          $1,330,600.00
+A2C:          $1,339,800.00
+Buy-and-Hold: $1,330,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+
+=== Detached in Burlington ===
+Q-Learning:   $1,460,100.00
+PPO:          $1,462,900.00
+A2C:          $1,476,400.00
+Buy-and-Hold: $1,442,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+
+=== Attached in Burlington ===
+Q-Learning:   $1,353,000.00
+PPO:          $1,330,500.00
+A2C:          $1,352,900.00
+Buy-and-Hold: $1,330,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 33}
+{'BUY': '10.00%', 'SELL': '7.50%', 'HOLD': '82.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 31}
+{'BUY': '12.50%', 'SELL': '10.00%', 'HOLD': '77.50%'}
+
+=== Townhouse in Burlington ===
+Q-Learning:   $1,216,800.00
+PPO:          $1,226,300.00
+A2C:          $1,234,500.00
+Buy-and-Hold: $1,225,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 27}
+{'BUY': '17.50%', 'SELL': '15.00%', 'HOLD': '67.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 31}
+{'BUY': '12.50%', 'SELL': '10.00%', 'HOLD': '77.50%'}
+
+=== Apartment in Burlington ===
+Q-Learning:   $1,195,500.00
+PPO:          $1,193,600.00
+A2C:          $1,199,700.00
+Buy-and-Hold: $1,184,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Running area: City of Toronto ===
+=== Composite in City of Toronto ===
+Q-Learning:   $1,297,900.00
+PPO:          $1,351,600.00
+A2C:          $1,356,500.00
+Buy-and-Hold: $1,351,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 4, 'HOLD': 122}
+{'BUY': '3.08%', 'SELL': '3.08%', 'HOLD': '93.85%'}
+PPO Action Distribution (valid only):
 {'BUY': 1, 'SELL': 0, 'HOLD': 129}
 {'BUY': '0.77%', 'SELL': '0.00%', 'HOLD': '99.23%'}
-
-PPO Action Distribution (valid only):
-{'BUY': 1, 'SELL': 0, 'HOLD': 123}
-{'BUY': '0.81%', 'SELL': '0.00%', 'HOLD': '99.19%'}
-
 A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 121}
+{'BUY': '3.85%', 'SELL': '3.08%', 'HOLD': '93.08%'}
+
+=== Detached in City of Toronto ===
+Q-Learning:   $1,548,000.00
+PPO:          $1,590,400.00
+A2C:          $1,597,100.00
+Buy-and-Hold: $1,502,800.00
+Q-Learning Action Distribution (valid only):
 {'BUY': 2, 'SELL': 1, 'HOLD': 127}
 {'BUY': '1.54%', 'SELL': '0.77%', 'HOLD': '97.69%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 119}
+{'BUY': '4.62%', 'SELL': '3.85%', 'HOLD': '91.54%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 6, 'HOLD': 118}
+{'BUY': '4.62%', 'SELL': '4.62%', 'HOLD': '90.77%'}
 
-Final portfolio values:
-Q-Learning:   $1,214,400.00
-PPO:          $1,214,400.00
-A2C:          $1,192,400.00
+=== Attached in City of Toronto ===
+Q-Learning:   $1,426,200.00
+PPO:          $1,445,200.00
+A2C:          $1,440,500.00
+Buy-and-Hold: $1,399,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 127}
+{'BUY': '1.54%', 'SELL': '0.77%', 'HOLD': '97.69%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 123}
+{'BUY': '3.08%', 'SELL': '2.31%', 'HOLD': '94.62%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 121}
+{'BUY': '3.85%', 'SELL': '3.08%', 'HOLD': '93.08%'}
+
+=== Townhouse in City of Toronto ===
+Q-Learning:   $1,239,900.00
+PPO:          $1,201,900.00
+A2C:          $1,244,200.00
+Buy-and-Hold: $1,239,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 129}
+{'BUY': '0.77%', 'SELL': '0.00%', 'HOLD': '99.23%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 121}
+{'BUY': '3.85%', 'SELL': '3.08%', 'HOLD': '93.08%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 123}
+{'BUY': '3.08%', 'SELL': '2.31%', 'HOLD': '94.62%'}
+
+=== Apartment in City of Toronto ===
+Q-Learning:   $1,191,400.00
+PPO:          $1,209,900.00
+A2C:          $1,208,400.00
 Buy-and-Hold: $1,213,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 129}
+{'BUY': '0.77%', 'SELL': '0.00%', 'HOLD': '99.23%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 1, 'HOLD': 128}
+{'BUY': '0.77%', 'SELL': '0.77%', 'HOLD': '98.46%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 123}
+{'BUY': '3.08%', 'SELL': '2.31%', 'HOLD': '94.62%'}
 
-Process finished with exit code 0
+=== Running area: Clarington ===
+=== Composite in Clarington ===
+Q-Learning:   $1,339,900.00
+PPO:          $1,368,700.00
+A2C:          $1,392,700.00
+Buy-and-Hold: $1,338,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Clarington ===
+Q-Learning:   $1,436,000.00
+PPO:          $1,211,200.00
+A2C:          $1,442,100.00
+Buy-and-Hold: $1,380,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 47}
+{'BUY': '11.67%', 'SELL': '10.00%', 'HOLD': '78.33%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Clarington ===
+Q-Learning:   $1,361,200.00
+PPO:          $1,331,900.00
+A2C:          $1,358,200.00
+Buy-and-Hold: $1,294,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Clarington ===
+Q-Learning:   $1,291,300.00
+PPO:          $1,210,800.00
+A2C:          $1,268,900.00
+Buy-and-Hold: $1,298,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 55}
+{'BUY': '3.45%', 'SELL': '1.72%', 'HOLD': '94.83%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Apartment in Clarington ===
+Q-Learning:   $1,168,400.00
+PPO:          $1,164,500.00
+A2C:          $1,208,400.00
+Buy-and-Hold: $1,168,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Durham Region ===
+=== Composite in Durham Region ===
+Q-Learning:   $1,429,200.00
+PPO:          $1,316,600.00
+A2C:          $1,434,400.00
+Buy-and-Hold: $1,368,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 46}
+{'BUY': '14.29%', 'SELL': '12.70%', 'HOLD': '73.02%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Durham Region ===
+Q-Learning:   $1,466,000.00
+PPO:          $1,260,100.00
+A2C:          $1,462,300.00
+Buy-and-Hold: $1,395,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 42}
+{'BUY': '12.73%', 'SELL': '10.91%', 'HOLD': '76.36%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Durham Region ===
+Q-Learning:   $1,384,300.00
+PPO:          $1,350,200.00
+A2C:          $1,394,100.00
+Buy-and-Hold: $1,327,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Durham Region ===
+Q-Learning:   $1,323,600.00
+PPO:          $1,302,300.00
+A2C:          $1,353,900.00
+Buy-and-Hold: $1,301,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Apartment in Durham Region ===
+Q-Learning:   $1,224,400.00
+PPO:          $1,217,100.00
+A2C:          $1,217,200.00
+Buy-and-Hold: $1,216,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Halton Hills ===
+=== Composite in Halton Hills ===
+Q-Learning:   $1,314,400.00
+PPO:          $1,314,400.00
+A2C:          $1,314,400.00
+Buy-and-Hold: $1,313,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+
+=== Detached in Halton Hills ===
+Q-Learning:   $1,341,800.00
+PPO:          $1,343,700.00
+A2C:          $1,345,300.00
+Buy-and-Hold: $1,341,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+
+=== Attached in Halton Hills ===
+Q-Learning:   $1,276,500.00
+PPO:          $1,268,900.00
+A2C:          $1,268,900.00
+Buy-and-Hold: $1,268,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+
+=== Townhouse in Halton Hills ===
+Q-Learning:   $1,178,800.00
+PPO:          $1,186,300.00
+A2C:          $1,215,400.00
+Buy-and-Hold: $1,185,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 29}
+{'BUY': '15.00%', 'SELL': '12.50%', 'HOLD': '72.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+
+=== Apartment in Halton Hills ===
+Q-Learning:   $1,133,400.00
+PPO:          $1,147,200.00
+A2C:          $1,147,200.00
+Buy-and-Hold: $1,120,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Running area: Halton Region ===
+=== Composite in Halton Region ===
+Q-Learning:   $1,335,400.00
+PPO:          $1,333,600.00
+A2C:          $1,326,200.00
+Buy-and-Hold: $1,333,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Detached in Halton Region ===
+Q-Learning:   $1,423,700.00
+PPO:          $1,412,300.00
+A2C:          $1,456,100.00
+Buy-and-Hold: $1,410,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+
+=== Attached in Halton Region ===
+Q-Learning:   $1,291,500.00
+PPO:          $1,291,500.00
+A2C:          $1,290,900.00
+Buy-and-Hold: $1,291,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+
+=== Townhouse in Halton Region ===
+Q-Learning:   $1,233,300.00
+PPO:          $1,233,300.00
+A2C:          $1,236,800.00
+Buy-and-Hold: $1,232,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Apartment in Halton Region ===
+Q-Learning:   $1,102,400.00
+PPO:          $1,173,000.00
+A2C:          $1,163,900.00
+Buy-and-Hold: $1,141,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 10, 'SELL': 9, 'HOLD': 21}
+{'BUY': '25.00%', 'SELL': '22.50%', 'HOLD': '52.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 31}
+{'BUY': '12.50%', 'SELL': '10.00%', 'HOLD': '77.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 33}
+{'BUY': '10.00%', 'SELL': '7.50%', 'HOLD': '82.50%'}
+
+=== Running area: Markham ===
+=== Composite in Markham ===
+Q-Learning:   $1,545,800.00
+PPO:          $1,364,200.00
+A2C:          $1,552,900.00
+Buy-and-Hold: $1,354,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 44}
+{'BUY': '10.91%', 'SELL': '9.09%', 'HOLD': '80.00%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Markham ===
+Q-Learning:   $1,717,100.00
+PPO:          $1,670,400.00
+A2C:          $1,761,900.00
+Buy-and-Hold: $1,490,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 45}
+{'BUY': '6.00%', 'SELL': '4.00%', 'HOLD': '90.00%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Markham ===
+Q-Learning:   $1,476,600.00
+PPO:          $1,443,200.00
+A2C:          $1,499,700.00
+Buy-and-Hold: $1,327,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 57}
+{'BUY': '4.84%', 'SELL': '3.23%', 'HOLD': '91.94%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Markham ===
+Q-Learning:   $1,244,000.00
+PPO:          $1,022,300.00
+A2C:          $1,295,700.00
+Buy-and-Hold: $1,236,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 4, 'HOLD': 55}
+{'BUY': '6.35%', 'SELL': '6.35%', 'HOLD': '87.30%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Apartment in Markham ===
+Q-Learning:   $1,260,400.00
+PPO:          $1,328,000.00
+A2C:          $1,353,200.00
+Buy-and-Hold: $1,228,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 59}
+{'BUY': '3.23%', 'SELL': '1.61%', 'HOLD': '95.16%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Running area: Milton ===
+=== Composite in Milton ===
+Q-Learning:   $1,301,900.00
+PPO:          $1,291,300.00
+A2C:          $1,308,400.00
+Buy-and-Hold: $1,290,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Detached in Milton ===
+Q-Learning:   $1,387,500.00
+PPO:          $1,378,700.00
+A2C:          $1,399,900.00
+Buy-and-Hold: $1,378,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 33}
+{'BUY': '10.00%', 'SELL': '7.50%', 'HOLD': '82.50%'}
+
+=== Attached in Milton ===
+Q-Learning:   $1,267,300.00
+PPO:          $1,259,000.00
+A2C:          $1,278,100.00
+Buy-and-Hold: $1,263,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 1, 'HOLD': 38}
+{'BUY': '2.50%', 'SELL': '2.50%', 'HOLD': '95.00%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Townhouse in Milton ===
+Q-Learning:   $1,200,700.00
+PPO:          $1,200,700.00
+A2C:          $1,200,300.00
+Buy-and-Hold: $1,200,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+
+=== Apartment in Milton ===
+Q-Learning:   $1,082,800.00
+PPO:          $1,136,300.00
+A2C:          $1,145,900.00
+Buy-and-Hold: $1,089,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 27}
+{'BUY': '17.50%', 'SELL': '15.00%', 'HOLD': '67.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 31}
+{'BUY': '12.50%', 'SELL': '10.00%', 'HOLD': '77.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 31}
+{'BUY': '12.50%', 'SELL': '10.00%', 'HOLD': '77.50%'}
+
+=== Running area: Mississauga ===
+=== Composite in Mississauga ===
+Q-Learning:   $1,472,000.00
+PPO:          $1,426,300.00
+A2C:          $1,463,700.00
+Buy-and-Hold: $1,415,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Detached in Mississauga ===
+Q-Learning:   $1,662,000.00
+PPO:          $1,589,500.00
+A2C:          $1,685,000.00
+Buy-and-Hold: $1,562,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Mississauga ===
+Q-Learning:   $1,412,300.00
+PPO:          $1,370,400.00
+A2C:          $1,428,200.00
+Buy-and-Hold: $1,354,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Mississauga ===
+Q-Learning:   $1,305,100.00
+PPO:          $1,284,900.00
+A2C:          $1,284,900.00
+Buy-and-Hold: $1,275,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Apartment in Mississauga ===
+Q-Learning:   $1,258,000.00
+PPO:          $1,251,300.00
+A2C:          $1,258,000.00
+Buy-and-Hold: $1,257,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+
+=== Running area: Newmarket ===
+=== Composite in Newmarket ===
+Q-Learning:   $1,452,400.00
+PPO:          $1,085,100.00
+A2C:          $1,472,700.00
+Buy-and-Hold: $1,299,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Newmarket ===
+Q-Learning:   $1,564,400.00
+PPO:          $1,587,800.00
+A2C:          $1,587,800.00
+Buy-and-Hold: $1,369,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 59}
+{'BUY': '3.23%', 'SELL': '1.61%', 'HOLD': '95.16%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Newmarket ===
+Q-Learning:   $1,337,100.00
+PPO:          $1,155,900.00
+A2C:          $1,391,400.00
+Buy-and-Hold: $1,232,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 51}
+{'BUY': '8.33%', 'SELL': '6.67%', 'HOLD': '85.00%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Newmarket ===
+Q-Learning:   $1,209,700.00
+PPO:          $1,048,900.00
+A2C:          $1,252,200.00
+Buy-and-Hold: $1,162,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in Newmarket ===
+Q-Learning:   $1,173,200.00
+PPO:          $1,000,000.00
+A2C:          $1,239,100.00
+Buy-and-Hold: $1,172,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 0, 'SELL': 0, 'HOLD': 63}
+{'BUY': '0.00%', 'SELL': '0.00%', 'HOLD': '100.00%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Running area: Oakville ===
+=== Composite in Oakville ===
+Q-Learning:   $1,355,400.00
+PPO:          $1,334,800.00
+A2C:          $1,354,900.00
+Buy-and-Hold: $1,334,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+
+Skipping Detached in Oakville: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Attached in Oakville ===
+Q-Learning:   $1,308,900.00
+PPO:          $1,297,300.00
+A2C:          $1,332,100.00
+Buy-and-Hold: $1,296,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Townhouse in Oakville ===
+Q-Learning:   $1,265,100.00
+PPO:          $1,265,100.00
+A2C:          $1,295,700.00
+Buy-and-Hold: $1,264,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 33}
+{'BUY': '10.00%', 'SELL': '7.50%', 'HOLD': '82.50%'}
+
+=== Apartment in Oakville ===
+Q-Learning:   $1,105,300.00
+PPO:          $1,115,800.00
+A2C:          $1,133,500.00
+Buy-and-Hold: $1,090,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 31}
+{'BUY': '12.50%', 'SELL': '10.00%', 'HOLD': '77.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 31}
+{'BUY': '12.50%', 'SELL': '10.00%', 'HOLD': '77.50%'}
+
+=== Running area: Oshawa ===
+=== Composite in Oshawa ===
+Q-Learning:   $1,407,200.00
+PPO:          $1,178,600.00
+A2C:          $1,402,500.00
+Buy-and-Hold: $1,348,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 47}
+{'BUY': '10.34%', 'SELL': '8.62%', 'HOLD': '81.03%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Oshawa ===
+Q-Learning:   $1,393,000.00
+PPO:          $1,358,500.00
+A2C:          $1,412,800.00
+Buy-and-Hold: $1,358,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Attached in Oshawa ===
+Q-Learning:   $1,354,900.00
+PPO:          $1,311,300.00
+A2C:          $1,391,100.00
+Buy-and-Hold: $1,338,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Oshawa ===
+Q-Learning:   $1,326,000.00
+PPO:          $1,314,000.00
+A2C:          $1,363,600.00
+Buy-and-Hold: $1,313,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Apartment in Oshawa ===
+Q-Learning:   $1,199,500.00
+PPO:          $1,019,300.00
+A2C:          $1,229,400.00
+Buy-and-Hold: $1,199,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Running area: Peel Region ===
+=== Composite in Peel Region ===
+Q-Learning:   $1,460,600.00
+PPO:          $1,434,800.00
+A2C:          $1,475,500.00
+Buy-and-Hold: $1,419,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Peel Region ===
+Q-Learning:   $1,609,800.00
+PPO:          $1,555,800.00
+A2C:          $1,609,800.00
+Buy-and-Hold: $1,522,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Peel Region ===
+Q-Learning:   $1,437,800.00
+PPO:          $1,397,800.00
+A2C:          $1,432,300.00
+Buy-and-Hold: $1,375,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Peel Region ===
+Q-Learning:   $1,316,800.00
+PPO:          $1,089,000.00
+A2C:          $1,276,100.00
+Buy-and-Hold: $1,275,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 57}
+{'BUY': '3.33%', 'SELL': '1.67%', 'HOLD': '95.00%'}
+A2C Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+
+=== Apartment in Peel Region ===
+Q-Learning:   $1,250,500.00
+PPO:          $1,250,500.00
+A2C:          $1,250,500.00
+Buy-and-Hold: $1,250,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+
+=== Running area: Pickering ===
+=== Composite in Pickering ===
+Q-Learning:   $1,422,700.00
+PPO:          $1,181,200.00
+A2C:          $1,440,200.00
+Buy-and-Hold: $1,388,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 43}
+{'BUY': '15.00%', 'SELL': '13.33%', 'HOLD': '71.67%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Pickering ===
+Q-Learning:   $1,474,700.00
+PPO:          $1,328,500.00
+A2C:          $1,492,800.00
+Buy-and-Hold: $1,422,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 42}
+{'BUY': '11.32%', 'SELL': '9.43%', 'HOLD': '79.25%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Pickering ===
+Q-Learning:   $1,375,900.00
+PPO:          $1,173,500.00
+A2C:          $1,392,300.00
+Buy-and-Hold: $1,345,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 51}
+{'BUY': '6.90%', 'SELL': '5.17%', 'HOLD': '87.93%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Pickering ===
+Q-Learning:   $1,342,600.00
+PPO:          $1,277,200.00
+A2C:          $1,354,500.00
+Buy-and-Hold: $1,277,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in Pickering ===
+Q-Learning:   $1,321,300.00
+PPO:          $1,313,200.00
+A2C:          $1,324,600.00
+Buy-and-Hold: $1,312,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Richmond Hill ===
+=== Composite in Richmond Hill ===
+Q-Learning:   $1,496,300.00
+PPO:          $1,599,100.00
+A2C:          $1,611,600.00
+Buy-and-Hold: $1,362,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+Skipping Detached in Richmond Hill: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Attached in Richmond Hill ===
+Q-Learning:   $1,482,000.00
+PPO:          $1,393,700.00
+A2C:          $1,551,500.00
+Buy-and-Hold: $1,326,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 37}
+{'BUY': '14.00%', 'SELL': '12.00%', 'HOLD': '74.00%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Richmond Hill ===
+Q-Learning:   $1,214,700.00
+PPO:          $1,043,000.00
+A2C:          $1,327,800.00
+Buy-and-Hold: $1,174,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 4, 'HOLD': 54}
+{'BUY': '6.45%', 'SELL': '6.45%', 'HOLD': '87.10%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 55}
+{'BUY': '5.00%', 'SELL': '3.33%', 'HOLD': '91.67%'}
+
+=== Apartment in Richmond Hill ===
+Q-Learning:   $1,199,500.00
+PPO:          $1,036,000.00
+A2C:          $1,198,900.00
+Buy-and-Hold: $1,199,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 1, 'HOLD': 60}
+{'BUY': '1.61%', 'SELL': '1.61%', 'HOLD': '96.77%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: TREB Total ===
+=== Composite in TREB Total ===
+Q-Learning:   $1,454,600.00
+PPO:          $1,406,900.00
+A2C:          $1,469,000.00
+Buy-and-Hold: $1,397,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in TREB Total ===
+Q-Learning:   $1,598,500.00
+PPO:          $1,574,500.00
+A2C:          $1,620,100.00
+Buy-and-Hold: $1,492,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 57}
+{'BUY': '4.84%', 'SELL': '3.23%', 'HOLD': '91.94%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in TREB Total ===
+Q-Learning:   $1,445,500.00
+PPO:          $1,229,100.00
+A2C:          $1,463,100.00
+Buy-and-Hold: $1,383,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 48}
+{'BUY': '8.77%', 'SELL': '7.02%', 'HOLD': '84.21%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in TREB Total ===
+Q-Learning:   $1,322,100.00
+PPO:          $1,038,900.00
+A2C:          $1,339,600.00
+Buy-and-Hold: $1,304,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in TREB Total ===
+Q-Learning:   $1,231,600.00
+PPO:          $1,240,000.00
+A2C:          $1,234,900.00
+Buy-and-Hold: $1,239,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Toronto C01 ===
+=== Composite in Toronto C01 ===
+Q-Learning:   $1,310,000.00
+PPO:          $1,316,400.00
+A2C:          $1,380,000.00
+Buy-and-Hold: $1,296,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Detached in Toronto C01 ===
+Q-Learning:   $1,684,700.00
+PPO:          $1,580,900.00
+A2C:          $1,940,500.00
+Buy-and-Hold: $1,548,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 46}
+{'BUY': '14.29%', 'SELL': '12.70%', 'HOLD': '73.02%'}
+
+=== Attached in Toronto C01 ===
+Q-Learning:   $1,502,400.00
+PPO:          $1,556,200.00
+A2C:          $1,657,000.00
+Buy-and-Hold: $1,355,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 10, 'SELL': 9, 'HOLD': 44}
+{'BUY': '15.87%', 'SELL': '14.29%', 'HOLD': '69.84%'}
+PPO Action Distribution (valid only):
+{'BUY': 11, 'SELL': 10, 'HOLD': 38}
+{'BUY': '18.64%', 'SELL': '16.95%', 'HOLD': '64.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 10, 'SELL': 9, 'HOLD': 44}
+{'BUY': '15.87%', 'SELL': '14.29%', 'HOLD': '69.84%'}
+
+=== Townhouse in Toronto C01 ===
+Q-Learning:   $1,327,800.00
+PPO:          $1,317,400.00
+A2C:          $1,388,200.00
+Buy-and-Hold: $1,316,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Apartment in Toronto C01 ===
+Q-Learning:   $1,280,000.00
+PPO:          $1,255,100.00
+A2C:          $1,328,200.00
+Buy-and-Hold: $1,254,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Running area: Toronto C02 ===
+=== Composite in Toronto C02 ===
+Q-Learning:   $1,514,800.00
+PPO:          $1,480,900.00
+A2C:          $1,540,700.00
+Buy-and-Hold: $1,496,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+
+Skipping Detached in Toronto C02: Initial cash is too low to buy one unit for buy-and-hold.
+
+Skipping Attached in Toronto C02: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Townhouse in Toronto C02 ===
+Q-Learning:   $1,612,700.00
+PPO:          $1,760,500.00
+A2C:          $1,891,200.00
+Buy-and-Hold: $1,529,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 42}
+{'BUY': '15.25%', 'SELL': '13.56%', 'HOLD': '71.19%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 5, 'HOLD': 53}
+{'BUY': '7.94%', 'SELL': '7.94%', 'HOLD': '84.13%'}
+
+=== Apartment in Toronto C02 ===
+Q-Learning:   $1,296,000.00
+PPO:          $1,302,000.00
+A2C:          $1,369,700.00
+Buy-and-Hold: $1,295,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 46}
+{'BUY': '14.29%', 'SELL': '12.70%', 'HOLD': '73.02%'}
+
+=== Running area: Toronto C04 ===
+Skipping Composite in Toronto C04: Initial cash is too low to buy one unit for buy-and-hold.
+
+Skipping Detached in Toronto C04: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Attached in Toronto C04 ===
+Q-Learning:   $1,247,700.00
+PPO:          $1,362,000.00
+A2C:          $1,501,800.00
+Buy-and-Hold: $1,194,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 31}
+{'BUY': '14.29%', 'SELL': '11.90%', 'HOLD': '73.81%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 31}
+{'BUY': '12.50%', 'SELL': '10.00%', 'HOLD': '77.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 7, 'HOLD': 28}
+{'BUY': '16.67%', 'SELL': '16.67%', 'HOLD': '66.67%'}
+
+=== Townhouse in Toronto C04 ===
+Q-Learning:   $1,514,100.00
+PPO:          $1,559,100.00
+A2C:          $1,772,200.00
+Buy-and-Hold: $351,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 5, 'HOLD': 22}
+{'BUY': '15.62%', 'SELL': '15.62%', 'HOLD': '68.75%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 6, 'HOLD': 19}
+{'BUY': '19.35%', 'SELL': '19.35%', 'HOLD': '61.29%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 4, 'HOLD': 24}
+{'BUY': '12.50%', 'SELL': '12.50%', 'HOLD': '75.00%'}
+
+=== Apartment in Toronto C04 ===
+Q-Learning:   $1,159,000.00
+PPO:          $1,156,500.00
+A2C:          $1,156,500.00
+Buy-and-Hold: $1,156,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 41}
+{'BUY': '2.38%', 'SELL': '0.00%', 'HOLD': '97.62%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 41}
+{'BUY': '2.38%', 'SELL': '0.00%', 'HOLD': '97.62%'}
+A2C Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 41}
+{'BUY': '2.38%', 'SELL': '0.00%', 'HOLD': '97.62%'}
+
+=== Running area: Toronto C06 ===
+Skipping Composite in Toronto C06: Initial cash is too low to buy one unit for buy-and-hold.
+
+Skipping Detached in Toronto C06: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Attached in Toronto C06 ===
+Q-Learning:   $1,269,100.00
+PPO:          $1,297,200.00
+A2C:          $1,388,400.00
+Buy-and-Hold: $1,177,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 10, 'SELL': 10, 'HOLD': 22}
+{'BUY': '23.81%', 'SELL': '23.81%', 'HOLD': '52.38%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 32}
+{'BUY': '12.20%', 'SELL': '9.76%', 'HOLD': '78.05%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 33}
+{'BUY': '11.90%', 'SELL': '9.52%', 'HOLD': '78.57%'}
+
+=== Townhouse in Toronto C06 ===
+Q-Learning:   $1,139,900.00
+PPO:          $1,148,900.00
+A2C:          $1,151,700.00
+Buy-and-Hold: $1,122,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 35}
+{'BUY': '9.52%', 'SELL': '7.14%', 'HOLD': '83.33%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 35}
+{'BUY': '9.52%', 'SELL': '7.14%', 'HOLD': '83.33%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 33}
+{'BUY': '11.90%', 'SELL': '9.52%', 'HOLD': '78.57%'}
+
+=== Apartment in Toronto C06 ===
+Q-Learning:   $1,153,400.00
+PPO:          $1,146,400.00
+A2C:          $1,219,600.00
+Buy-and-Hold: $1,134,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 39}
+{'BUY': '4.76%', 'SELL': '2.38%', 'HOLD': '92.86%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 4, 'HOLD': 34}
+{'BUY': '9.52%', 'SELL': '9.52%', 'HOLD': '80.95%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 34}
+{'BUY': '9.76%', 'SELL': '7.32%', 'HOLD': '82.93%'}
+
+=== Running area: Toronto C07 ===
+=== Composite in Toronto C07 ===
+Q-Learning:   $1,356,100.00
+PPO:          $1,349,000.00
+A2C:          $1,433,200.00
+Buy-and-Hold: $1,336,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+Skipping Detached in Toronto C07: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Attached in Toronto C07 ===
+Q-Learning:   $1,299,900.00
+PPO:          $1,072,800.00
+A2C:          $1,364,200.00
+Buy-and-Hold: $1,167,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Toronto C07 ===
+Q-Learning:   $1,307,900.00
+PPO:          $1,313,200.00
+A2C:          $1,382,600.00
+Buy-and-Hold: $1,300,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+
+=== Apartment in Toronto C07 ===
+Q-Learning:   $1,269,600.00
+PPO:          $1,279,800.00
+A2C:          $1,306,400.00
+Buy-and-Hold: $1,262,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+
+=== Running area: Toronto C08 ===
+=== Composite in Toronto C08 ===
+Q-Learning:   $1,320,900.00
+PPO:          $1,291,800.00
+A2C:          $1,401,000.00
+Buy-and-Hold: $1,276,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Detached in Toronto C08 ===
+Q-Learning:   $2,565,100.00
+PPO:          $2,449,600.00
+A2C:          $2,539,000.00
+Buy-and-Hold: $2,419,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 15, 'SELL': 14, 'HOLD': 33}
+{'BUY': '24.19%', 'SELL': '22.58%', 'HOLD': '53.23%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+
+=== Attached in Toronto C08 ===
+Q-Learning:   $1,902,100.00
+PPO:          $1,773,600.00
+A2C:          $2,063,200.00
+Buy-and-Hold: $1,772,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 46}
+{'BUY': '14.29%', 'SELL': '12.70%', 'HOLD': '73.02%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+
+=== Townhouse in Toronto C08 ===
+Q-Learning:   $1,303,800.00
+PPO:          $1,359,200.00
+A2C:          $1,421,600.00
+Buy-and-Hold: $1,259,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 47}
+{'BUY': '12.90%', 'SELL': '11.29%', 'HOLD': '75.81%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+
+=== Apartment in Toronto C08 ===
+Q-Learning:   $1,287,100.00
+PPO:          $1,208,600.00
+A2C:          $1,315,400.00
+Buy-and-Hold: $1,199,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Running area: Toronto C09 ===
+Skipping Composite in Toronto C09: Initial cash is too low to buy one unit for buy-and-hold.
+
+Skipping Detached in Toronto C09: Initial cash is too low to buy one unit for buy-and-hold.
+
+Skipping Attached in Toronto C09: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Townhouse in Toronto C09 ===
+Q-Learning:   $2,268,600.00
+PPO:          $2,111,200.00
+A2C:          $2,251,300.00
+Buy-and-Hold: $1,769,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 10, 'SELL': 9, 'HOLD': 44}
+{'BUY': '15.87%', 'SELL': '14.29%', 'HOLD': '69.84%'}
+PPO Action Distribution (valid only):
+{'BUY': 16, 'SELL': 15, 'HOLD': 29}
+{'BUY': '26.67%', 'SELL': '25.00%', 'HOLD': '48.33%'}
+A2C Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 45}
+{'BUY': '14.52%', 'SELL': '12.90%', 'HOLD': '72.58%'}
+
+=== Apartment in Toronto C09 ===
+Q-Learning:   $1,369,600.00
+PPO:          $1,318,900.00
+A2C:          $1,518,100.00
+Buy-and-Hold: $1,252,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+
+=== Running area: Toronto C10 ===
+=== Composite in Toronto C10 ===
+Q-Learning:   $1,394,300.00
+PPO:          $1,406,800.00
+A2C:          $1,465,500.00
+Buy-and-Hold: $1,368,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+Skipping Detached in Toronto C10: Initial cash is too low to buy one unit for buy-and-hold.
+
+Skipping Attached in Toronto C10: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Townhouse in Toronto C10 ===
+Q-Learning:   $1,370,700.00
+PPO:          $1,409,100.00
+A2C:          $1,590,700.00
+Buy-and-Hold: $1,324,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 12, 'SELL': 11, 'HOLD': 40}
+{'BUY': '19.05%', 'SELL': '17.46%', 'HOLD': '63.49%'}
+PPO Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 49}
+{'BUY': '11.29%', 'SELL': '9.68%', 'HOLD': '79.03%'}
+A2C Action Distribution (valid only):
+{'BUY': 10, 'SELL': 9, 'HOLD': 44}
+{'BUY': '15.87%', 'SELL': '14.29%', 'HOLD': '69.84%'}
+
+=== Apartment in Toronto C10 ===
+Q-Learning:   $1,248,100.00
+PPO:          $1,017,700.00
+A2C:          $1,279,700.00
+Buy-and-Hold: $1,239,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 4, 'HOLD': 55}
+{'BUY': '6.35%', 'SELL': '6.35%', 'HOLD': '87.30%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Running area: Toronto C11 ===
+=== Composite in Toronto C11 ===
+Q-Learning:   $1,394,600.00
+PPO:          $1,423,300.00
+A2C:          $1,417,700.00
+Buy-and-Hold: $1,407,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+Skipping Detached in Toronto C11: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Attached in Toronto C11 ===
+Q-Learning:   $1,570,900.00
+PPO:          $1,701,200.00
+A2C:          $1,790,500.00
+Buy-and-Hold: $1,390,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 46}
+{'BUY': '14.29%', 'SELL': '12.70%', 'HOLD': '73.02%'}
+PPO Action Distribution (valid only):
+{'BUY': 10, 'SELL': 9, 'HOLD': 40}
+{'BUY': '16.95%', 'SELL': '15.25%', 'HOLD': '67.80%'}
+A2C Action Distribution (valid only):
+{'BUY': 11, 'SELL': 10, 'HOLD': 42}
+{'BUY': '17.46%', 'SELL': '15.87%', 'HOLD': '66.67%'}
+
+=== Townhouse in Toronto C11 ===
+Q-Learning:   $1,239,700.00
+PPO:          $1,203,600.00
+A2C:          $1,262,000.00
+Buy-and-Hold: $1,241,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in Toronto C11 ===
+Q-Learning:   $1,215,500.00
+PPO:          $1,190,000.00
+A2C:          $1,215,300.00
+Buy-and-Hold: $1,215,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 54}
+{'BUY': '3.51%', 'SELL': '1.75%', 'HOLD': '94.74%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Toronto C12 ===
+Skipping Composite in Toronto C12: Initial cash is too low to buy one unit for buy-and-hold.
+
+Skipping Detached in Toronto C12: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Attached in Toronto C12 ===
+Q-Learning:   $1,663,500.00
+PPO:          $1,707,500.00
+A2C:          $1,742,100.00
+Buy-and-Hold: $1,490,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 46}
+{'BUY': '14.29%', 'SELL': '12.70%', 'HOLD': '73.02%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 48}
+{'BUY': '3.92%', 'SELL': '1.96%', 'HOLD': '94.12%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Townhouse in Toronto C12 ===
+Q-Learning:   $1,427,400.00
+PPO:          $1,535,400.00
+A2C:          $1,722,400.00
+Buy-and-Hold: $1,200,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 10, 'SELL': 9, 'HOLD': 44}
+{'BUY': '15.87%', 'SELL': '14.29%', 'HOLD': '69.84%'}
+PPO Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 42}
+{'BUY': '15.25%', 'SELL': '13.56%', 'HOLD': '71.19%'}
+A2C Action Distribution (valid only):
+{'BUY': 8, 'SELL': 8, 'HOLD': 47}
+{'BUY': '12.70%', 'SELL': '12.70%', 'HOLD': '74.60%'}
+
+=== Apartment in Toronto C12 ===
+Q-Learning:   $1,385,600.00
+PPO:          $1,359,400.00
+A2C:          $1,390,500.00
+Buy-and-Hold: $1,371,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Running area: Toronto C13 ===
+=== Composite in Toronto C13 ===
+Q-Learning:   $1,471,600.00
+PPO:          $1,404,700.00
+A2C:          $1,561,900.00
+Buy-and-Hold: $1,390,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+Skipping Detached in Toronto C13: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Attached in Toronto C13 ===
+Q-Learning:   $1,444,400.00
+PPO:          $1,267,400.00
+A2C:          $1,500,700.00
+Buy-and-Hold: $1,259,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 47}
+{'BUY': '10.34%', 'SELL': '8.62%', 'HOLD': '81.03%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Townhouse in Toronto C13 ===
+Q-Learning:   $1,272,200.00
+PPO:          $1,334,300.00
+A2C:          $1,417,700.00
+Buy-and-Hold: $1,249,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+
+=== Apartment in Toronto C13 ===
+Q-Learning:   $1,310,500.00
+PPO:          $1,281,700.00
+A2C:          $1,305,900.00
+Buy-and-Hold: $1,281,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Toronto C14 ===
+=== Composite in Toronto C14 ===
+Q-Learning:   $1,357,200.00
+PPO:          $1,331,600.00
+A2C:          $1,472,400.00
+Buy-and-Hold: $1,309,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+Skipping Detached in Toronto C14: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Attached in Toronto C14 ===
+Q-Learning:   $1,340,000.00
+PPO:          $1,468,300.00
+A2C:          $1,574,300.00
+Buy-and-Hold: $1,180,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 52}
+{'BUY': '5.26%', 'SELL': '3.51%', 'HOLD': '91.23%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Townhouse in Toronto C14 ===
+Q-Learning:   $1,171,300.00
+PPO:          $1,401,600.00
+A2C:          $1,462,400.00
+Buy-and-Hold: $1,111,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 12, 'SELL': 11, 'HOLD': 40}
+{'BUY': '19.05%', 'SELL': '17.46%', 'HOLD': '63.49%'}
+PPO Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 46}
+{'BUY': '14.29%', 'SELL': '12.70%', 'HOLD': '73.02%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+
+=== Apartment in Toronto C14 ===
+Q-Learning:   $1,307,100.00
+PPO:          $1,307,700.00
+A2C:          $1,366,700.00
+Buy-and-Hold: $1,290,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Running area: Toronto C15 ===
+=== Composite in Toronto C15 ===
+Q-Learning:   $1,270,300.00
+PPO:          $1,215,700.00
+A2C:          $1,367,500.00
+Buy-and-Hold: $1,263,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 3, 'HOLD': 49}
+{'BUY': '5.45%', 'SELL': '5.45%', 'HOLD': '89.09%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+Skipping Detached in Toronto C15: Initial cash is too low to buy one unit for buy-and-hold.
+
+=== Attached in Toronto C15 ===
+Q-Learning:   $1,341,900.00
+PPO:          $1,402,000.00
+A2C:          $1,494,600.00
+Buy-and-Hold: $1,180,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 41}
+{'BUY': '8.33%', 'SELL': '6.25%', 'HOLD': '85.42%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Townhouse in Toronto C15 ===
+Q-Learning:   $1,261,200.00
+PPO:          $1,179,900.00
+A2C:          $1,307,600.00
+Buy-and-Hold: $1,223,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 4, 'HOLD': 48}
+{'BUY': '7.14%', 'SELL': '7.14%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in Toronto C15 ===
+Q-Learning:   $1,249,500.00
+PPO:          $1,239,600.00
+A2C:          $1,287,600.00
+Buy-and-Hold: $1,239,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Running area: Toronto E01 ===
+=== Composite in Toronto E01 ===
+Q-Learning:   $1,616,100.00
+PPO:          $1,582,300.00
+A2C:          $1,656,500.00
+Buy-and-Hold: $1,546,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+
+=== Detached in Toronto E01 ===
+Q-Learning:   $1,712,300.00
+PPO:          $1,706,300.00
+A2C:          $1,817,900.00
+Buy-and-Hold: $1,664,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+
+=== Attached in Toronto E01 ===
+Q-Learning:   $1,623,400.00
+PPO:          $1,593,300.00
+A2C:          $1,715,000.00
+Buy-and-Hold: $1,542,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+
+=== Townhouse in Toronto E01 ===
+Q-Learning:   $1,475,200.00
+PPO:          $1,483,800.00
+A2C:          $1,532,400.00
+Buy-and-Hold: $1,410,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+
+=== Apartment in Toronto E01 ===
+Q-Learning:   $1,376,600.00
+PPO:          $1,334,000.00
+A2C:          $1,505,800.00
+Buy-and-Hold: $1,283,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 61}
+{'BUY': '1.61%', 'SELL': '0.00%', 'HOLD': '98.39%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Running area: Toronto E02 ===
+=== Composite in Toronto E02 ===
+Q-Learning:   $1,588,600.00
+PPO:          $1,575,700.00
+A2C:          $1,694,500.00
+Buy-and-Hold: $1,511,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 59}
+{'BUY': '3.23%', 'SELL': '1.61%', 'HOLD': '95.16%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+
+=== Detached in Toronto E02 ===
+Q-Learning:   $1,675,800.00
+PPO:          $1,593,500.00
+A2C:          $1,815,600.00
+Buy-and-Hold: $1,569,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+
+=== Attached in Toronto E02 ===
+Q-Learning:   $1,601,600.00
+PPO:          $1,593,800.00
+A2C:          $1,662,600.00
+Buy-and-Hold: $1,536,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 57}
+{'BUY': '4.84%', 'SELL': '3.23%', 'HOLD': '91.94%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+
+=== Townhouse in Toronto E02 ===
+Q-Learning:   $1,409,100.00
+PPO:          $1,436,600.00
+A2C:          $1,692,900.00
+Buy-and-Hold: $1,346,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 21, 'SELL': 20, 'HOLD': 22}
+{'BUY': '33.33%', 'SELL': '31.75%', 'HOLD': '34.92%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+
+=== Apartment in Toronto E02 ===
+Q-Learning:   $1,184,600.00
+PPO:          $1,353,100.00
+A2C:          $1,423,600.00
+Buy-and-Hold: $1,149,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 50}
+{'BUY': '9.84%', 'SELL': '8.20%', 'HOLD': '81.97%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+
+=== Running area: Toronto E04 ===
+=== Composite in Toronto E04 ===
+Q-Learning:   $1,365,100.00
+PPO:          $1,353,900.00
+A2C:          $1,395,800.00
+Buy-and-Hold: $1,345,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Toronto E04 ===
+Q-Learning:   $1,445,800.00
+PPO:          $1,481,300.00
+A2C:          $1,480,600.00
+Buy-and-Hold: $1,373,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Toronto E04 ===
+Q-Learning:   $1,275,200.00
+PPO:          $1,332,800.00
+A2C:          $1,411,700.00
+Buy-and-Hold: $1,356,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 46}
+{'BUY': '14.29%', 'SELL': '12.70%', 'HOLD': '73.02%'}
+PPO Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 58}
+{'BUY': '3.28%', 'SELL': '1.64%', 'HOLD': '95.08%'}
+
+=== Townhouse in Toronto E04 ===
+Q-Learning:   $1,185,900.00
+PPO:          $1,030,700.00
+A2C:          $1,233,000.00
+Buy-and-Hold: $1,185,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 2, 'HOLD': 59}
+{'BUY': '3.17%', 'SELL': '3.17%', 'HOLD': '93.65%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Apartment in Toronto E04 ===
+Q-Learning:   $1,320,200.00
+PPO:          $1,031,400.00
+A2C:          $1,322,300.00
+Buy-and-Hold: $1,288,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 1, 'HOLD': 61}
+{'BUY': '1.59%', 'SELL': '1.59%', 'HOLD': '96.83%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Toronto E05 ===
+=== Composite in Toronto E05 ===
+Q-Learning:   $1,296,800.00
+PPO:          $1,063,300.00
+A2C:          $1,316,900.00
+Buy-and-Hold: $1,275,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Toronto E05 ===
+Q-Learning:   $1,430,800.00
+PPO:          $1,547,100.00
+A2C:          $1,590,200.00
+Buy-and-Hold: $1,382,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 52}
+{'BUY': '6.78%', 'SELL': '5.08%', 'HOLD': '88.14%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Toronto E05 ===
+Q-Learning:   $1,378,500.00
+PPO:          $1,355,200.00
+A2C:          $1,456,700.00
+Buy-and-Hold: $1,281,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 49}
+{'BUY': '11.29%', 'SELL': '9.68%', 'HOLD': '79.03%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Toronto E05 ===
+Q-Learning:   $1,234,300.00
+PPO:          $1,221,200.00
+A2C:          $1,268,400.00
+Buy-and-Hold: $1,215,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in Toronto E05 ===
+Q-Learning:   $1,236,200.00
+PPO:          $1,212,200.00
+A2C:          $1,228,000.00
+Buy-and-Hold: $1,220,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 54}
+{'BUY': '3.51%', 'SELL': '1.75%', 'HOLD': '94.74%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Running area: Toronto E06 ===
+=== Composite in Toronto E06 ===
+Q-Learning:   $1,230,400.00
+PPO:          $1,225,100.00
+A2C:          $1,274,300.00
+Buy-and-Hold: $1,156,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 39}
+{'BUY': '4.76%', 'SELL': '2.38%', 'HOLD': '92.86%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 38}
+{'BUY': '4.88%', 'SELL': '2.44%', 'HOLD': '92.68%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 35}
+{'BUY': '9.52%', 'SELL': '7.14%', 'HOLD': '83.33%'}
+
+=== Detached in Toronto E06 ===
+Q-Learning:   $1,174,200.00
+PPO:          $1,192,000.00
+A2C:          $1,285,700.00
+Buy-and-Hold: $1,156,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 10, 'SELL': 9, 'HOLD': 23}
+{'BUY': '23.81%', 'SELL': '21.43%', 'HOLD': '54.76%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 32}
+{'BUY': '12.20%', 'SELL': '9.76%', 'HOLD': '78.05%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 35}
+{'BUY': '9.52%', 'SELL': '7.14%', 'HOLD': '83.33%'}
+
+=== Attached in Toronto E06 ===
+Q-Learning:   $1,179,600.00
+PPO:          $1,170,300.00
+A2C:          $1,264,600.00
+Buy-and-Hold: $1,119,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 35}
+{'BUY': '9.52%', 'SELL': '7.14%', 'HOLD': '83.33%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 6, 'HOLD': 30}
+{'BUY': '14.29%', 'SELL': '14.29%', 'HOLD': '71.43%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 4, 'HOLD': 34}
+{'BUY': '9.52%', 'SELL': '9.52%', 'HOLD': '80.95%'}
+
+=== Townhouse in Toronto E06 ===
+Q-Learning:   $1,188,400.00
+PPO:          $1,195,700.00
+A2C:          $1,297,100.00
+Buy-and-Hold: $491,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 8, 'SELL': 8, 'HOLD': 16}
+{'BUY': '25.00%', 'SELL': '25.00%', 'HOLD': '50.00%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 5, 'HOLD': 17}
+{'BUY': '18.52%', 'SELL': '18.52%', 'HOLD': '62.96%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 7, 'HOLD': 18}
+{'BUY': '21.88%', 'SELL': '21.88%', 'HOLD': '56.25%'}
+
+=== Apartment in Toronto E06 ===
+Q-Learning:   $1,187,200.00
+PPO:          $1,165,100.00
+A2C:          $1,280,300.00
+Buy-and-Hold: $1,156,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 33}
+{'BUY': '11.90%', 'SELL': '9.52%', 'HOLD': '78.57%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 23}
+{'BUY': '7.69%', 'SELL': '3.85%', 'HOLD': '88.46%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 35}
+{'BUY': '9.52%', 'SELL': '7.14%', 'HOLD': '83.33%'}
+
+=== Running area: Toronto E07 ===
+=== Composite in Toronto E07 ===
+Q-Learning:   $1,266,500.00
+PPO:          $1,062,900.00
+A2C:          $1,261,800.00
+Buy-and-Hold: $1,262,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 53}
+{'BUY': '8.06%', 'SELL': '6.45%', 'HOLD': '85.48%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Toronto E07 ===
+Q-Learning:   $1,367,900.00
+PPO:          $1,328,100.00
+A2C:          $1,421,300.00
+Buy-and-Hold: $1,287,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Toronto E07 ===
+Q-Learning:   $1,296,300.00
+PPO:          $1,270,400.00
+A2C:          $1,342,900.00
+Buy-and-Hold: $1,236,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Toronto E07 ===
+Q-Learning:   $1,245,900.00
+PPO:          $1,238,900.00
+A2C:          $1,283,100.00
+Buy-and-Hold: $1,221,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Apartment in Toronto E07 ===
+Q-Learning:   $1,220,400.00
+PPO:          $1,220,400.00
+A2C:          $1,220,400.00
+Buy-and-Hold: $1,219,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+
+=== Running area: Toronto E08 ===
+=== Composite in Toronto E08 ===
+Q-Learning:   $1,327,600.00
+PPO:          $1,327,600.00
+A2C:          $1,340,100.00
+Buy-and-Hold: $1,327,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Toronto E08 ===
+Q-Learning:   $1,449,900.00
+PPO:          $1,419,600.00
+A2C:          $1,485,400.00
+Buy-and-Hold: $1,374,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Toronto E08 ===
+Q-Learning:   $1,266,700.00
+PPO:          $1,313,700.00
+A2C:          $1,366,900.00
+Buy-and-Hold: $1,279,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+
+=== Townhouse in Toronto E08 ===
+Q-Learning:   $1,270,500.00
+PPO:          $1,268,800.00
+A2C:          $1,282,400.00
+Buy-and-Hold: $1,268,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Apartment in Toronto E08 ===
+Q-Learning:   $1,296,800.00
+PPO:          $1,296,800.00
+A2C:          $1,290,800.00
+Buy-and-Hold: $1,296,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Toronto E09 ===
+=== Composite in Toronto E09 ===
+Q-Learning:   $1,327,700.00
+PPO:          $1,320,800.00
+A2C:          $1,337,000.00
+Buy-and-Hold: $1,311,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Detached in Toronto E09 ===
+Q-Learning:   $1,404,600.00
+PPO:          $1,401,600.00
+A2C:          $1,461,200.00
+Buy-and-Hold: $1,348,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Toronto E09 ===
+Q-Learning:   $1,349,200.00
+PPO:          $1,321,600.00
+A2C:          $1,374,300.00
+Buy-and-Hold: $1,315,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 58}
+{'BUY': '3.28%', 'SELL': '1.64%', 'HOLD': '95.08%'}
+
+=== Townhouse in Toronto E09 ===
+Q-Learning:   $1,265,400.00
+PPO:          $1,260,000.00
+A2C:          $1,295,800.00
+Buy-and-Hold: $1,259,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Apartment in Toronto E09 ===
+Q-Learning:   $1,263,900.00
+PPO:          $1,269,600.00
+A2C:          $1,296,500.00
+Buy-and-Hold: $1,263,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Running area: Toronto E10 ===
+=== Composite in Toronto E10 ===
+Q-Learning:   $1,412,800.00
+PPO:          $1,376,400.00
+A2C:          $1,468,100.00
+Buy-and-Hold: $1,366,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Toronto E10 ===
+Q-Learning:   $1,458,200.00
+PPO:          $1,424,600.00
+A2C:          $1,532,200.00
+Buy-and-Hold: $1,396,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Toronto E10 ===
+Q-Learning:   $1,297,400.00
+PPO:          $1,366,600.00
+A2C:          $1,435,800.00
+Buy-and-Hold: $1,351,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 10, 'SELL': 9, 'HOLD': 44}
+{'BUY': '15.87%', 'SELL': '14.29%', 'HOLD': '69.84%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Toronto E10 ===
+Q-Learning:   $1,254,900.00
+PPO:          $1,116,800.00
+A2C:          $1,351,100.00
+Buy-and-Hold: $1,257,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 3, 'HOLD': 54}
+{'BUY': '5.00%', 'SELL': '5.00%', 'HOLD': '90.00%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Apartment in Toronto E10 ===
+Q-Learning:   $1,273,600.00
+PPO:          $1,041,000.00
+A2C:          $1,262,000.00
+Buy-and-Hold: $1,252,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 9, 'SELL': 9, 'HOLD': 45}
+{'BUY': '14.29%', 'SELL': '14.29%', 'HOLD': '71.43%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Running area: Toronto E11 ===
+=== Composite in Toronto E11 ===
+Q-Learning:   $1,034,300.00
+PPO:          $1,186,500.00
+A2C:          $1,186,500.00
+Buy-and-Hold: $1,181,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 13, 'SELL': 13, 'HOLD': 22}
+{'BUY': '27.08%', 'SELL': '27.08%', 'HOLD': '45.83%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 45}
+{'BUY': '4.17%', 'SELL': '2.08%', 'HOLD': '93.75%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 45}
+{'BUY': '4.17%', 'SELL': '2.08%', 'HOLD': '93.75%'}
+
+=== Detached in Toronto E11 ===
+Q-Learning:   $1,258,700.00
+PPO:          $1,240,200.00
+A2C:          $1,271,800.00
+Buy-and-Hold: $1,191,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 43}
+{'BUY': '6.25%', 'SELL': '4.17%', 'HOLD': '89.58%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 45}
+{'BUY': '4.17%', 'SELL': '2.08%', 'HOLD': '93.75%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 45}
+{'BUY': '4.17%', 'SELL': '2.08%', 'HOLD': '93.75%'}
+
+=== Attached in Toronto E11 ===
+Q-Learning:   $1,198,300.00
+PPO:          $1,217,300.00
+A2C:          $1,228,500.00
+Buy-and-Hold: $1,175,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 43}
+{'BUY': '6.25%', 'SELL': '4.17%', 'HOLD': '89.58%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 45}
+{'BUY': '4.17%', 'SELL': '2.08%', 'HOLD': '93.75%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 45}
+{'BUY': '4.17%', 'SELL': '2.08%', 'HOLD': '93.75%'}
+
+=== Townhouse in Toronto E11 ===
+Q-Learning:   $1,112,300.00
+PPO:          $1,110,000.00
+A2C:          $1,110,000.00
+Buy-and-Hold: $1,109,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 47}
+{'BUY': '2.08%', 'SELL': '0.00%', 'HOLD': '97.92%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 47}
+{'BUY': '2.08%', 'SELL': '0.00%', 'HOLD': '97.92%'}
+A2C Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 47}
+{'BUY': '2.08%', 'SELL': '0.00%', 'HOLD': '97.92%'}
+
+=== Apartment in Toronto E11 ===
+Q-Learning:   $1,234,700.00
+PPO:          $1,234,700.00
+A2C:          $1,223,000.00
+Buy-and-Hold: $1,217,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 47}
+{'BUY': '2.08%', 'SELL': '0.00%', 'HOLD': '97.92%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 46}
+{'BUY': '2.13%', 'SELL': '0.00%', 'HOLD': '97.87%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 41}
+{'BUY': '8.33%', 'SELL': '6.25%', 'HOLD': '85.42%'}
+
+=== Running area: Toronto W01 ===
+=== Composite in Toronto W01 ===
+Q-Learning:   $1,482,900.00
+PPO:          $1,470,400.00
+A2C:          $1,540,800.00
+Buy-and-Hold: $1,469,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+
+=== Detached in Toronto W01 ===
+Q-Learning:   $1,654,300.00
+PPO:          $1,684,400.00
+A2C:          $1,895,700.00
+Buy-and-Hold: $1,648,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+
+=== Attached in Toronto W01 ===
+Q-Learning:   $1,528,100.00
+PPO:          $1,482,900.00
+A2C:          $1,692,100.00
+Buy-and-Hold: $1,480,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 20, 'SELL': 19, 'HOLD': 24}
+{'BUY': '31.75%', 'SELL': '30.16%', 'HOLD': '38.10%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+
+=== Townhouse in Toronto W01 ===
+Q-Learning:   $1,216,100.00
+PPO:          $1,119,300.00
+A2C:          $1,256,600.00
+Buy-and-Hold: $1,099,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 48}
+{'BUY': '12.70%', 'SELL': '11.11%', 'HOLD': '76.19%'}
+
+=== Apartment in Toronto W01 ===
+Q-Learning:   $1,272,700.00
+PPO:          $1,026,200.00
+A2C:          $1,271,400.00
+Buy-and-Hold: $1,272,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Toronto W02 ===
+=== Composite in Toronto W02 ===
+Q-Learning:   $1,512,700.00
+PPO:          $1,510,200.00
+A2C:          $1,567,200.00
+Buy-and-Hold: $1,495,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+
+=== Detached in Toronto W02 ===
+Q-Learning:   $1,584,900.00
+PPO:          $1,535,600.00
+A2C:          $1,699,300.00
+Buy-and-Hold: $1,568,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 18, 'SELL': 17, 'HOLD': 28}
+{'BUY': '28.57%', 'SELL': '26.98%', 'HOLD': '44.44%'}
+A2C Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 46}
+{'BUY': '14.29%', 'SELL': '12.70%', 'HOLD': '73.02%'}
+
+=== Attached in Toronto W02 ===
+Q-Learning:   $1,436,300.00
+PPO:          $1,471,100.00
+A2C:          $1,567,500.00
+Buy-and-Hold: $1,419,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+
+=== Townhouse in Toronto W02 ===
+Q-Learning:   $1,227,000.00
+PPO:          $1,253,400.00
+A2C:          $1,295,900.00
+Buy-and-Hold: $1,227,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Apartment in Toronto W02 ===
+Q-Learning:   $1,330,300.00
+PPO:          $1,284,800.00
+A2C:          $1,316,500.00
+Buy-and-Hold: $1,087,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+
+=== Running area: Toronto W03 ===
+=== Composite in Toronto W03 ===
+Q-Learning:   $1,323,400.00
+PPO:          $1,337,500.00
+A2C:          $1,357,700.00
+Buy-and-Hold: $1,318,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 51}
+{'BUY': '5.36%', 'SELL': '3.57%', 'HOLD': '91.07%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 53}
+{'BUY': '3.57%', 'SELL': '1.79%', 'HOLD': '94.64%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 46}
+{'BUY': '9.09%', 'SELL': '7.27%', 'HOLD': '83.64%'}
+
+=== Detached in Toronto W03 ===
+Q-Learning:   $1,386,200.00
+PPO:          $1,397,900.00
+A2C:          $1,406,400.00
+Buy-and-Hold: $1,348,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 49}
+{'BUY': '7.14%', 'SELL': '5.36%', 'HOLD': '87.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 52}
+{'BUY': '3.64%', 'SELL': '1.82%', 'HOLD': '94.55%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 46}
+{'BUY': '9.09%', 'SELL': '7.27%', 'HOLD': '83.64%'}
+
+=== Attached in Toronto W03 ===
+Q-Learning:   $1,350,300.00
+PPO:          $1,330,400.00
+A2C:          $1,307,200.00
+Buy-and-Hold: $1,302,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 47}
+{'BUY': '8.93%', 'SELL': '7.14%', 'HOLD': '83.93%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 49}
+{'BUY': '7.14%', 'SELL': '5.36%', 'HOLD': '87.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 44}
+{'BUY': '10.91%', 'SELL': '9.09%', 'HOLD': '80.00%'}
+
+=== Townhouse in Toronto W03 ===
+Q-Learning:   $1,249,900.00
+PPO:          $1,298,800.00
+A2C:          $1,348,800.00
+Buy-and-Hold: $1,280,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 6, 'HOLD': 44}
+{'BUY': '10.71%', 'SELL': '10.71%', 'HOLD': '78.57%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 53}
+{'BUY': '3.57%', 'SELL': '1.79%', 'HOLD': '94.64%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 45}
+{'BUY': '10.71%', 'SELL': '8.93%', 'HOLD': '80.36%'}
+
+=== Apartment in Toronto W03 ===
+Q-Learning:   $1,222,400.00
+PPO:          $1,222,400.00
+A2C:          $1,216,400.00
+Buy-and-Hold: $1,221,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 55}
+{'BUY': '1.79%', 'SELL': '0.00%', 'HOLD': '98.21%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 55}
+{'BUY': '1.79%', 'SELL': '0.00%', 'HOLD': '98.21%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 51}
+{'BUY': '5.36%', 'SELL': '3.57%', 'HOLD': '91.07%'}
+
+=== Running area: Toronto W04 ===
+=== Composite in Toronto W04 ===
+Q-Learning:   $1,352,100.00
+PPO:          $1,352,100.00
+A2C:          $1,354,600.00
+Buy-and-Hold: $1,351,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Toronto W04 ===
+Q-Learning:   $1,432,800.00
+PPO:          $1,425,400.00
+A2C:          $1,472,500.00
+Buy-and-Hold: $1,404,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Toronto W04 ===
+Q-Learning:   $1,334,600.00
+PPO:          $1,338,400.00
+A2C:          $1,374,900.00
+Buy-and-Hold: $1,335,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 57}
+{'BUY': '4.84%', 'SELL': '3.23%', 'HOLD': '91.94%'}
+
+=== Townhouse in Toronto W04 ===
+Q-Learning:   $1,199,900.00
+PPO:          $1,060,300.00
+A2C:          $1,213,400.00
+Buy-and-Hold: $1,199,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 2, 'HOLD': 59}
+{'BUY': '3.17%', 'SELL': '3.17%', 'HOLD': '93.65%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Apartment in Toronto W04 ===
+Q-Learning:   $1,259,700.00
+PPO:          $1,259,700.00
+A2C:          $1,270,300.00
+Buy-and-Hold: $1,259,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 4, 'HOLD': 55}
+{'BUY': '6.35%', 'SELL': '6.35%', 'HOLD': '87.30%'}
+
+=== Running area: Toronto W05 ===
+=== Composite in Toronto W05 ===
+Q-Learning:   $1,303,100.00
+PPO:          $1,303,100.00
+A2C:          $1,301,900.00
+Buy-and-Hold: $1,302,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Toronto W05 ===
+Q-Learning:   $1,453,300.00
+PPO:          $1,431,200.00
+A2C:          $1,464,200.00
+Buy-and-Hold: $1,409,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 58}
+{'BUY': '3.28%', 'SELL': '1.64%', 'HOLD': '95.08%'}
+
+=== Attached in Toronto W05 ===
+Q-Learning:   $1,356,500.00
+PPO:          $1,336,600.00
+A2C:          $1,375,100.00
+Buy-and-Hold: $1,324,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Toronto W05 ===
+Q-Learning:   $1,209,900.00
+PPO:          $1,237,200.00
+A2C:          $1,232,800.00
+Buy-and-Hold: $1,220,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Apartment in Toronto W05 ===
+Q-Learning:   $1,216,700.00
+PPO:          $1,216,700.00
+A2C:          $1,234,100.00
+Buy-and-Hold: $1,216,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Running area: Toronto W06 ===
+=== Composite in Toronto W06 ===
+Q-Learning:   $1,281,900.00
+PPO:          $1,300,600.00
+A2C:          $1,304,400.00
+Buy-and-Hold: $1,288,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Detached in Toronto W06 ===
+Q-Learning:   $1,595,600.00
+PPO:          $1,523,500.00
+A2C:          $1,591,500.00
+Buy-and-Hold: $1,477,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Attached in Toronto W06 ===
+Q-Learning:   $1,380,200.00
+PPO:          $1,374,700.00
+A2C:          $1,383,100.00
+Buy-and-Hold: $1,334,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 10, 'SELL': 9, 'HOLD': 44}
+{'BUY': '15.87%', 'SELL': '14.29%', 'HOLD': '69.84%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+
+=== Townhouse in Toronto W06 ===
+Q-Learning:   $1,464,900.00
+PPO:          $1,407,500.00
+A2C:          $1,640,100.00
+Buy-and-Hold: $1,407,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 14, 'SELL': 14, 'HOLD': 35}
+{'BUY': '22.22%', 'SELL': '22.22%', 'HOLD': '55.56%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 7, 'HOLD': 49}
+{'BUY': '11.11%', 'SELL': '11.11%', 'HOLD': '77.78%'}
+
+=== Apartment in Toronto W06 ===
+Q-Learning:   $1,215,700.00
+PPO:          $1,004,300.00
+A2C:          $1,228,400.00
+Buy-and-Hold: $1,215,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 2, 'HOLD': 59}
+{'BUY': '3.17%', 'SELL': '3.17%', 'HOLD': '93.65%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Toronto W07 ===
+=== Composite in Toronto W07 ===
+Q-Learning:   $1,605,600.00
+PPO:          $1,616,300.00
+A2C:          $1,643,300.00
+Buy-and-Hold: $1,500,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 35}
+{'BUY': '5.26%', 'SELL': '2.63%', 'HOLD': '92.11%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Detached in Toronto W07 ===
+Q-Learning:   $1,660,500.00
+PPO:          $1,643,400.00
+A2C:          $1,725,600.00
+Buy-and-Hold: $1,566,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+
+=== Attached in Toronto W07 ===
+Q-Learning:   $1,362,700.00
+PPO:          $1,440,600.00
+A2C:          $1,517,800.00
+Buy-and-Hold: $1,397,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 31}
+{'BUY': '12.50%', 'SELL': '10.00%', 'HOLD': '77.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 27}
+{'BUY': '17.50%', 'SELL': '15.00%', 'HOLD': '67.50%'}
+
+=== Townhouse in Toronto W07 ===
+Q-Learning:   $1,749,900.00
+PPO:          $1,444,400.00
+A2C:          $1,268,600.00
+Buy-and-Hold: $1,443,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 5, 'SELL': 5, 'HOLD': 19}
+{'BUY': '17.24%', 'SELL': '17.24%', 'HOLD': '65.52%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 27}
+{'BUY': '3.57%', 'SELL': '0.00%', 'HOLD': '96.43%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 2, 'HOLD': 21}
+{'BUY': '8.00%', 'SELL': '8.00%', 'HOLD': '84.00%'}
+
+=== Apartment in Toronto W07 ===
+Q-Learning:   $1,281,700.00
+PPO:          $1,266,100.00
+A2C:          $1,340,700.00
+Buy-and-Hold: $1,238,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 36}
+{'BUY': '5.13%', 'SELL': '2.56%', 'HOLD': '92.31%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Running area: Toronto W08 ===
+=== Composite in Toronto W08 ===
+Q-Learning:   $1,426,100.00
+PPO:          $1,415,200.00
+A2C:          $1,444,700.00
+Buy-and-Hold: $1,399,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Toronto W08 ===
+Q-Learning:   $1,574,900.00
+PPO:          $1,556,000.00
+A2C:          $1,598,800.00
+Buy-and-Hold: $1,490,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Attached in Toronto W08 ===
+Q-Learning:   $1,331,300.00
+PPO:          $1,246,200.00
+A2C:          $1,373,700.00
+Buy-and-Hold: $1,326,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Townhouse in Toronto W08 ===
+Q-Learning:   $1,366,000.00
+PPO:          $1,400,000.00
+A2C:          $1,459,800.00
+Buy-and-Hold: $1,353,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+
+=== Apartment in Toronto W08 ===
+Q-Learning:   $1,230,600.00
+PPO:          $1,222,600.00
+A2C:          $1,230,100.00
+Buy-and-Hold: $1,223,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Toronto W09 ===
+=== Composite in Toronto W09 ===
+Q-Learning:   $1,285,800.00
+PPO:          $1,285,800.00
+A2C:          $1,295,200.00
+Buy-and-Hold: $1,285,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Toronto W09 ===
+Q-Learning:   $1,459,500.00
+PPO:          $1,421,200.00
+A2C:          $1,505,300.00
+Buy-and-Hold: $1,395,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Attached in Toronto W09 ===
+Q-Learning:   $1,259,100.00
+PPO:          $1,288,000.00
+A2C:          $1,278,800.00
+Buy-and-Hold: $1,265,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 9, 'SELL': 8, 'HOLD': 46}
+{'BUY': '14.29%', 'SELL': '12.70%', 'HOLD': '73.02%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 8, 'SELL': 8, 'HOLD': 47}
+{'BUY': '12.70%', 'SELL': '12.70%', 'HOLD': '74.60%'}
+
+=== Townhouse in Toronto W09 ===
+Q-Learning:   $1,342,900.00
+PPO:          $1,341,000.00
+A2C:          $1,404,300.00
+Buy-and-Hold: $1,322,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+
+=== Apartment in Toronto W09 ===
+Q-Learning:   $1,167,500.00
+PPO:          $1,169,100.00
+A2C:          $1,175,400.00
+Buy-and-Hold: $1,168,600.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Toronto W10 ===
+=== Composite in Toronto W10 ===
+Q-Learning:   $1,357,600.00
+PPO:          $1,358,000.00
+A2C:          $1,383,500.00
+Buy-and-Hold: $1,349,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Toronto W10 ===
+Q-Learning:   $1,461,800.00
+PPO:          $1,444,500.00
+A2C:          $1,480,800.00
+Buy-and-Hold: $1,439,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 59}
+{'BUY': '3.23%', 'SELL': '1.61%', 'HOLD': '95.16%'}
+
+=== Attached in Toronto W10 ===
+Q-Learning:   $1,361,000.00
+PPO:          $1,349,000.00
+A2C:          $1,363,200.00
+Buy-and-Hold: $1,345,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+
+=== Townhouse in Toronto W10 ===
+Q-Learning:   $1,403,900.00
+PPO:          $1,401,600.00
+A2C:          $1,382,100.00
+Buy-and-Hold: $1,403,400.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Apartment in Toronto W10 ===
+Q-Learning:   $1,209,700.00
+PPO:          $1,221,100.00
+A2C:          $1,221,100.00
+Buy-and-Hold: $1,209,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Vaughan ===
+=== Composite in Vaughan ===
+Q-Learning:   $1,479,600.00
+PPO:          $1,429,200.00
+A2C:          $1,529,800.00
+Buy-and-Hold: $1,364,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
+=== Detached in Vaughan ===
+Q-Learning:   $1,572,700.00
+PPO:          $1,472,200.00
+A2C:          $1,657,000.00
+Buy-and-Hold: $1,429,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Vaughan ===
+Q-Learning:   $1,431,000.00
+PPO:          $1,318,900.00
+A2C:          $1,496,400.00
+Buy-and-Hold: $1,324,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Vaughan ===
+Q-Learning:   $1,370,400.00
+PPO:          $1,341,800.00
+A2C:          $1,425,000.00
+Buy-and-Hold: $1,332,300.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in Vaughan ===
+Q-Learning:   $1,196,000.00
+PPO:          $1,196,000.00
+A2C:          $1,218,500.00
+Buy-and-Hold: $1,195,500.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 61}
+{'BUY': '1.61%', 'SELL': '0.00%', 'HOLD': '98.39%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Whitby ===
+=== Composite in Whitby ===
+Q-Learning:   $1,492,500.00
+PPO:          $1,403,700.00
+A2C:          $1,486,800.00
+Buy-and-Hold: $1,403,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 61}
+{'BUY': '1.61%', 'SELL': '0.00%', 'HOLD': '98.39%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in Whitby ===
+Q-Learning:   $1,551,600.00
+PPO:          $1,369,800.00
+A2C:          $1,552,400.00
+Buy-and-Hold: $1,447,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 40}
+{'BUY': '13.21%', 'SELL': '11.32%', 'HOLD': '75.47%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in Whitby ===
+Q-Learning:   $1,387,100.00
+PPO:          $1,175,200.00
+A2C:          $1,434,800.00
+Buy-and-Hold: $1,358,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 44}
+{'BUY': '13.56%', 'SELL': '11.86%', 'HOLD': '74.58%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in Whitby ===
+Q-Learning:   $1,228,300.00
+PPO:          $1,055,500.00
+A2C:          $1,233,300.00
+Buy-and-Hold: $1,210,200.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 6, 'SELL': 5, 'HOLD': 52}
+{'BUY': '9.52%', 'SELL': '7.94%', 'HOLD': '82.54%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in Whitby ===
+Q-Learning:   $1,195,400.00
+PPO:          $1,042,900.00
+A2C:          $1,228,400.00
+Buy-and-Hold: $1,181,800.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 54}
+{'BUY': '7.94%', 'SELL': '6.35%', 'HOLD': '85.71%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Running area: Whitchurch-Stouffville ===
+=== Composite in Whitchurch-Stouffville ===
+Q-Learning:   $1,254,400.00
+PPO:          $1,254,400.00
+A2C:          $1,324,600.00
+Buy-and-Hold: $1,253,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Detached in Whitchurch-Stouffville ===
+Q-Learning:   $1,305,600.00
+PPO:          $1,319,600.00
+A2C:          $1,355,600.00
+Buy-and-Hold: $1,293,900.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 5, 'SELL': 4, 'HOLD': 31}
+{'BUY': '12.50%', 'SELL': '10.00%', 'HOLD': '77.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+
+=== Attached in Whitchurch-Stouffville ===
+Q-Learning:   $1,222,000.00
+PPO:          $1,217,400.00
+A2C:          $1,239,600.00
+Buy-and-Hold: $1,207,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 33}
+{'BUY': '10.00%', 'SELL': '7.50%', 'HOLD': '82.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 34}
+{'BUY': '7.69%', 'SELL': '5.13%', 'HOLD': '87.18%'}
+
+=== Townhouse in Whitchurch-Stouffville ===
+Q-Learning:   $1,104,000.00
+PPO:          $1,088,500.00
+A2C:          $1,088,500.00
+Buy-and-Hold: $1,088,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 39}
+{'BUY': '2.50%', 'SELL': '0.00%', 'HOLD': '97.50%'}
+
+=== Apartment in Whitchurch-Stouffville ===
+Q-Learning:   $1,100,100.00
+PPO:          $1,106,600.00
+A2C:          $1,106,000.00
+Buy-and-Hold: $1,100,100.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+PPO Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 37}
+{'BUY': '5.00%', 'SELL': '2.50%', 'HOLD': '92.50%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 35}
+{'BUY': '7.50%', 'SELL': '5.00%', 'HOLD': '87.50%'}
+
+=== Running area: York Region ===
+=== Composite in York Region ===
+Q-Learning:   $1,499,100.00
+PPO:          $1,314,100.00
+A2C:          $1,555,700.00
+Buy-and-Hold: $1,337,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+PPO Action Distribution (valid only):
+{'BUY': 8, 'SELL': 7, 'HOLD': 41}
+{'BUY': '14.29%', 'SELL': '12.50%', 'HOLD': '73.21%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Detached in York Region ===
+Q-Learning:   $1,606,000.00
+PPO:          $1,556,900.00
+A2C:          $1,692,800.00
+Buy-and-Hold: $1,399,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 50}
+{'BUY': '11.11%', 'SELL': '9.52%', 'HOLD': '79.37%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 54}
+{'BUY': '6.56%', 'SELL': '4.92%', 'HOLD': '88.52%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Attached in York Region ===
+Q-Learning:   $1,452,700.00
+PPO:          $1,278,000.00
+A2C:          $1,487,300.00
+Buy-and-Hold: $1,313,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 7, 'SELL': 6, 'HOLD': 44}
+{'BUY': '12.28%', 'SELL': '10.53%', 'HOLD': '77.19%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Townhouse in York Region ===
+Q-Learning:   $1,308,700.00
+PPO:          $1,245,900.00
+A2C:          $1,308,700.00
+Buy-and-Hold: $1,242,700.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 4, 'SELL': 3, 'HOLD': 56}
+{'BUY': '6.35%', 'SELL': '4.76%', 'HOLD': '88.89%'}
+A2C Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+
+=== Apartment in York Region ===
+Q-Learning:   $1,204,100.00
+PPO:          $1,203,500.00
+A2C:          $1,222,900.00
+Buy-and-Hold: $1,203,000.00
+Q-Learning Action Distribution (valid only):
+{'BUY': 2, 'SELL': 1, 'HOLD': 60}
+{'BUY': '3.17%', 'SELL': '1.59%', 'HOLD': '95.24%'}
+PPO Action Distribution (valid only):
+{'BUY': 1, 'SELL': 0, 'HOLD': 62}
+{'BUY': '1.59%', 'SELL': '0.00%', 'HOLD': '98.41%'}
+A2C Action Distribution (valid only):
+{'BUY': 3, 'SELL': 2, 'HOLD': 58}
+{'BUY': '4.76%', 'SELL': '3.17%', 'HOLD': '92.06%'}
+
